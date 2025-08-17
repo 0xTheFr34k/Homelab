@@ -1,0 +1,5 @@
+init:
+	terraform init -plugin-dir="${HOME}/.terraform.d/plugins" -upgrade
+plan:
+	terraform plan
+
