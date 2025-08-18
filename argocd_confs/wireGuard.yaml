@@ -17,7 +17,7 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: playground-app-v1
+  name: wireguard
   namespace: argocd
 spec:
   project: homelab

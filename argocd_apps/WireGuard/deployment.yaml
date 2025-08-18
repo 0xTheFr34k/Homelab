@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: wireguard
-  namespace: vpn
+  namespace: wireguard
 spec:
   replicas: 1
   selector:
