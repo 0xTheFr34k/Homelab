@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: development
+  namespace: argocd
+spec:
+  sourceRepos:
+    - https://github.com/0xTheFr34k/Homelab.git
+  destinations:
+  - namespace: '*'
+    server: '*'
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: playground-app-v1
+  namespace: argocd
+spec:
+  project: development
+  source:
+    repoURL: https://github.com/0xTheFr34k/Homelab.git
+    targetRevision: master
+    path: argocd_apps/test
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
