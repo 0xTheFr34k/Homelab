@@ -4,7 +4,7 @@ metadata:
   name: playground-v1
   namespace: dev
 spec:
-  replicas: 1
+  replicas: 4
   selector:
     matchLabels:
       app: playground-v1
