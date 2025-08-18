@@ -1,0 +1,36 @@
+# values.yaml for Homarr
+replicaCount: 1
+
+image:
+  repository: ghcr.io/homarr/homarr
+  tag: latest
+  pullPolicy: IfNotPresent
+
+persistence:
+  enabled: true
+  size: 1Gi
+  storageClass: ""   # leave empty to use default
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: traefik
+  hosts:
+    - host: homarr.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []   # Add TLS config if needed
+
+resources:
+  limits:
+    cpu: 200m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+service:
+  type: ClusterIP
+  port: 80
+
