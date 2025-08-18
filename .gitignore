@@ -7,3 +7,4 @@ terraform-provider-proxmox/
 _out
 kubeconfig
 talosconfig
+.DS_Store
