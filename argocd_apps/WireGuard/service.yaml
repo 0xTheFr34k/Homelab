@@ -5,10 +5,10 @@ metadata:
   namespace: wireguard
 spec:
   type: LoadBalancer
+  loadBalancerIP: 192.168.1.101  # MetalLB assigned
   selector:
     app: wireguard
   ports:
     - protocol: UDP
       port: 51820
       targetPort: 51820
-

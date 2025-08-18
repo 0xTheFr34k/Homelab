@@ -16,6 +16,11 @@ spec:
       containers:
       - name: wireguard
         image: linuxserver/wireguard
+        securityContext:
+          capabilities:
+            add:
+              - NET_ADMIN
+              - SYS_MODULE
         env:
           - name: PUID
             value: "1000"
@@ -24,7 +29,7 @@ spec:
           - name: TZ
             value: "Europe/Paris"
           - name: SERVERURL
-            value: "your-public-ip-or-dns"
+            value: "192.168.1.101" # use MetalLB IP or WAN IP
           - name: SERVERPORT
             value: "51820"
           - name: PEERS
@@ -34,5 +39,11 @@ spec:
         ports:
         - containerPort: 51820
           protocol: UDP
+        volumeMounts:
+          - mountPath: /config
+            name: wireguard-config
       restartPolicy: Always
-
+      volumes:
+        - name: wireguard-config
+          persistentVolumeClaim:
+            claimName: wireguard-pvc
