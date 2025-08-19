@@ -1,6 +1,6 @@
-CONTROL_PLANE_IP=192.168.1.41
-WORKER_IP1=192.168.1.42
-WORKER_IP2=192.168.1.40
+CONTROL_PLANE_IP=192.168.1.46
+WORKER_IP1=192.168.1.45
+WORKER_IP2=192.168.1.47
 KUBECONFIG_FILE=kubeconfig
 MERGED_KUBECONFIG=/tmp/merged-kubeconfig
 
@@ -9,7 +9,7 @@ init:
 plan:
 	terraform plan
 gen:
-	talosctl gen config  --install-disk "/dev/vda/" talos-proxmox-cluster https://${CONTROL_PLANE_IP}:6443 --output-dir _out --install-image factory.talos.dev/installer/ce4c980550dd2ab1b17bbf2b08801c7eb59418eafe8f279833297925d67c7515:v1.10.6 --force
+	talosctl gen config talos-proxmox-cluster https://${CONTROL_PLANE_IP}:6443 --output-dir _out --install-image factory.talos.dev/installer/ce4c980550dd2ab1b17bbf2b08801c7eb59418eafe8f279833297925d67c7515:v1.10.6 --force
 
 applay-gen:
 	talosctl apply-config --insecure --nodes ${CONTROL_PLANE_IP} --file _out/controlplane.yaml
