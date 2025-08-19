@@ -1,9 +1,3 @@
-CONTROL_PLANE_IP=192.168.1.46
-WORKER_IP1=192.168.1.45
-WORKER_IP2=192.168.1.47
-KUBECONFIG_FILE=kubeconfig
-MERGED_KUBECONFIG=/tmp/merged-kubeconfig
-
 init:
 	terraform init -plugin-dir="${HOME}/.terraform.d/plugins" -upgrade
 plan:
@@ -18,11 +12,6 @@ applay-gen:
 
 bootstrap:
 	talosctl config endpoint ${CONTROL_PLANE_IP}
-	talosctl config endpoint ${CONTROL_PLANE_IP}
+	talosctl config node ${CONTROL_PLANE_IP}
 	talosctl bootstrap
 	talosctl kubeconfig .
-
-merge-kubeconfig:
-	KUBECONFIG=$(HOME)/.kube/config:$(KUBECONFIG_FILE) kubectl config view --merge --flatten > $(MERGED_KUBECONFIG)
-	mv $(MERGED_KUBECONFIG) $(HOME)/.kube/config
-
