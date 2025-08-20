@@ -1,5 +1,18 @@
 #SPDX-License-Identifier: MIT-0
 ---
-# tasks file for node-0
-- name: Ping test
-  ansible.builtin.command: echo "Hello from {{ inventory_hostname }}"
+- name: Install Docker
+  package:
+    name: docker.io
+    state: present
+
+- name: Ensure Docker service is running
+  service:
+    name: docker
+    state: started
+    enabled: true
+
+- name: Add "{{ username }}" to docker group
+  user:
+    name: "{{ username }}"
+    groups: docker
+    append: true
