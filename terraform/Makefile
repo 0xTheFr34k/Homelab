@@ -11,10 +11,8 @@ applay-gen:
 	talosctl apply-config --insecure --nodes ${WORKER_IP2} --file _out/worker.yaml
 
 config:
-	talosctl config endpoint ${CONTROL_PLANE_IP}
-	talosctl config node ${CONTROL_PLANE_IP} --talosconfig _out/talosconfig
-	talosctl config node ${WORKER_IP1} --talosconfig _out/talosconfig
-	talosctl config node ${WORKER_IP2} --talosconfig _out/talosconfig
+	talosctl config endpoint ${CONTROL_PLANE_IP} --talosconfig _out/talosconfig
+	talosctl config node ${CONTROL_PLANE_IP} ${WORKER_IP1}  ${WORKER_IP2} --talosconfig _out/talosconfig
 bootstrap:
 	talosctl bootstrap --talosconfig _out/talosconfig
 	talosctl kubeconfig . --talosconfig _out/talosconfig
