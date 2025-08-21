@@ -6,6 +6,7 @@
 terraform-provider-proxmox/
 *.info
 .DS_Store
+.envrc
 
 # Devenv
 .devenv*
