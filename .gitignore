@@ -1,6 +1,7 @@
 *.env
 *.terraform
 *.tfstate
+*.tfstate.backup
 *.log
 terraform-provider-proxmox/
 *.info

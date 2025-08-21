@@ -1,117 +1,116 @@
-variable "nodes" {
+variable "masters" {
   default = {
-    master = 1
-    worker = 2
-    node   = 1
+    master0 = {
+      name        = "k8s-master-0"
+      vmid        = 100
+      target_node = "proxmox"
+      cpu         = 2
+      memory      = 3048
+      disk        = "100G"
+      storage     = "local-lvm"
+      macaddr     = "BC:24:11:25:C3:77"
+    }
   }
 }
 
-# Master
+variable "workers" {
+  default = {
+    worker0 = {
+      name        = "k8s-worker-0"
+      vmid        = 200
+      target_node = "proxmox"
+      cpu         = 4
+      memory      = 4128
+      disk        = "300G"
+      storage     = "local-lvm"
+      macaddr     = "BC:24:11:FF:D9:DE"
+    }
+    worker1 = {
+      name        = "k8s-worker-1"
+      vmid        = 201
+      target_node = "proxmox"
+      cpu         = 4
+      memory      = 4128
+      disk        = "300G"
+      storage     = "local-lvm"
+      macaddr     = "BC:24:11:71:D7:CF"
+    }
+  }
+}
+
 resource "proxmox_vm_qemu" "k8s_master" {
-  count       = var.nodes.master
+  for_each = var.masters
+
+  name        = each.value.name
+  vmid        = each.value.vmid
+  target_node = each.value.target_node
   boot        = "order=virtio0;ide2;net0"
-  name        = "k8s-master-${count.index}"
-  target_node = "proxmox"
   agent       = 1
-  cpu { cores = 2 }
-  memory = 2048
-  scsihw = "virtio-scsi-single"
+  scsihw      = "virtio-scsi-single"
+
+  cpu { cores = each.value.cpu }
+  memory = each.value.memory
 
   disks {
     ide {
       ide2 {
-        cdrom {
-          iso = "local:iso/talos-metal-amd64.iso"
-        }
+        cdrom { iso = "local:iso/talos-metal-amd64.iso" }
       }
     }
-
     virtio {
       virtio0 {
         disk {
-          size    = "50G"
-          storage = "local-lvm"
+          size    = each.value.disk
+          storage = each.value.storage
+          cache   = "writethrough"
         }
       }
     }
   }
 
-
   network {
-    id     = 0
-    model  = "virtio"
-    bridge = "vmbr0"
+    id       = 0
+    model    = "virtio"
+    bridge   = "vmbr0"
+    firewall = false
+    macaddr  = each.value.macaddr
   }
 }
 
-# Workers
 resource "proxmox_vm_qemu" "k8s_worker" {
-  count       = var.nodes.worker
+  for_each = var.workers
+
+  name        = each.value.name
+  vmid        = each.value.vmid
+  target_node = each.value.target_node
   boot        = "order=virtio0;ide2;net0"
-  name        = "k8s-worker-${count.index}"
-  target_node = "proxmox"
   agent       = 1
-  cpu { cores = 2 }
-  memory = 2048
-  scsihw = "virtio-scsi-single"
+  scsihw      = "virtio-scsi-single"
+
+  cpu { cores = each.value.cpu }
+  memory = each.value.memory
 
   disks {
     ide {
       ide2 {
-        cdrom {
-          iso = "local:iso/talos-metal-amd64.iso"
-        }
+        cdrom { iso = "local:iso/talos-metal-amd64.iso" }
       }
     }
     virtio {
       virtio0 {
         disk {
-          size    = "100G"
-          storage = "local-lvm"
+          size    = each.value.disk
+          storage = each.value.storage
         }
       }
     }
   }
 
   network {
-    id     = 0
-    model  = "virtio"
-    bridge = "vmbr0"
+    id       = 0
+    model    = "virtio"
+    bridge   = "vmbr0"
+    firewall = false
+    macaddr  = each.value.macaddr
   }
 }
-
-resource "proxmox_vm_qemu" "node" {
-  count       = var.nodes.node
-  boot        = "order=virtio0;ide2;net0"
-  name        = "node-${count.index}"
-  target_node = "proxmox"
-  agent       = 1
-  cpu { cores = 4 }
-  memory = 4048
-  scsihw = "virtio-scsi-single"
-
-  disks {
-    ide {
-      ide2 {
-        cdrom {
-          iso = "local:iso/ubuntu-24.04.3-live-server-amd64.iso"
-        }
-      }
-    }
-    virtio {
-      virtio0 {
-        disk {
-          size    = "100G"
-          storage = "local-lvm"
-        }
-      }
-    }
-  }
-
-  network {
-    id     = 0
-    model  = "virtio"
-    bridge = "vmbr0"
-  }
-}
-
