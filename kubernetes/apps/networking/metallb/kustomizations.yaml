@@ -1,0 +1,37 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: metallb-app
+  namespace: flux-system
+spec:
+  interval: 10m
+  path: ./apps/networking/metallb
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  # only apply Helm + namespace first
+  resources:
+    - namespace.yaml
+    - HelmRepository.yaml
+    - HelmRelease.yaml
+
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: metallb-config
+  namespace: flux-system
+spec:
+  interval: 10m
+  path: ./apps/networking/metallb
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  dependsOn:
+    - name: metallb-app
+  # apply config after CRDs exist
+  resources:
+    - ip-pool.yaml
+
