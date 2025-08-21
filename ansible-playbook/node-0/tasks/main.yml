@@ -16,3 +16,22 @@
     name: "{{ username }}"
     groups: docker
     append: true
+
+- name: Check if Docker Swarm is already initialized
+  stat:
+    path: /var/lib/docker/swarm
+  register: swarmEnabled
+
+- name: Initialize Docker Swarm
+  command: docker swarm init --advertise-addr "{{ HOSTADDRESS }}"
+  when: not swarmEnabled.stat.exists
+  register: swarm_init
+  ignore_errors: true
+
+- name: Show Swarm join token
+  command: docker swarm join-token worker -q
+  register: worker_token
+  changed_when: false
+
+- debug:
+    msg: "Worker join token: {{ worker_token.stdout }}"

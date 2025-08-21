@@ -1,0 +1,60 @@
+version: v1alpha1
+debug: false
+persist: true
+machine:
+  type: worker
+  token: 01wnp6.d8fhwopgmvmwjzne
+  ca:
+    crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJQakNCOGFBREFnRUNBaEI2MWg0ZytDaXJYYkNFU1hNNE1PcGpNQVVHQXl0bGNEQVFNUTR3REFZRFZRUUsKRXdWMFlXeHZjekFlRncweU5UQTRNakF5TXpNd05UQmFGdzB6TlRBNE1UZ3lNek13TlRCYU1CQXhEakFNQmdOVgpCQW9UQlhSaGJHOXpNQ293QlFZREsyVndBeUVBR2FzMVhvN1F3WnlGclJ3V0F2SDIrN3pkdWY4UHJuN01GQ1ZoClRabmd4MUdqWVRCZk1BNEdBMVVkRHdFQi93UUVBd0lDaERBZEJnTlZIU1VFRmpBVUJnZ3JCZ0VGQlFjREFRWUkKS3dZQkJRVUhBd0l3RHdZRFZSMFRBUUgvQkFVd0F3RUIvekFkQmdOVkhRNEVGZ1FVYjBVckh6Wmh5clZmMC9MMAp4YWxxNDAyYVN5QXdCUVlESzJWd0EwRUEwUlRzV1JiLzJKeWVTUVE2OEtsV2UzMnF5NzFlRHJwY1RrQ1FLVXRZCnZFMjF2d0ZZMTAyTDFHcitBajU1SFErQldDY096VEFrRUJNT0RobFp4cnhrQUE9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    key: ""
+  certSANs: []
+  kubelet:
+    extraMounts:
+      - destination: /var/lib/longhorn
+        type: bind
+        source: /var/lib/longhorn
+        options:
+          - bind
+          - rshared
+          - rw
+    defaultRuntimeSeccompProfileEnabled: true
+    disableManifestsDirectory: true
+  network:
+    hostname: worker-1
+  install:
+    disk: /dev/vda
+    image: factory.talos.dev/metal-installer/613e1592b2da41ae5e265e8789429f22e121aab91cb4deb6bc3c0b6262961245:v1.10.6
+    wipe: false
+  features:
+    rbac: true
+    stableHostname: true
+    apidCheckExtKeyUsage: true
+    diskQuotaSupport: true
+    kubePrism:
+      enabled: true
+      port: 7445
+    hostDNS:
+      enabled: true
+      forwardKubeDNSToHost: true
+cluster:
+  id: 7GdFsXduFfc4LslSuopXWBxKtrs2EkdQecSJS8BjI2M=
+  secret: F81rep3m5aRMALxfpUhZ8JvYZWS/qAsqBKuHlR1cGT0=
+  controlPlane:
+    endpoint: https://192.168.1.40:6443
+  clusterName: talos-proxmox-cluster
+  network:
+    dnsDomain: cluster.local
+    podSubnets:
+      - 10.244.0.0/16
+    serviceSubnets:
+      - 10.96.0.0/12
+  token: eg1gyd.yoiipc3ps81qt4nu
+  ca:
+    crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJpVENDQVRDZ0F3SUJBZ0lSQUlqTVk0TDVTYWZFRGI2L1pacTAzUG93Q2dZSUtvWkl6ajBFQXdJd0ZURVQKTUJFR0ExVUVDaE1LYTNWaVpYSnVaWFJsY3pBZUZ3MHlOVEE0TWpBeU16TXdOVEJhRncwek5UQTRNVGd5TXpNdwpOVEJhTUJVeEV6QVJCZ05WQkFvVENtdDFZbVZ5Ym1WMFpYTXdXVEFUQmdjcWhrak9QUUlCQmdncWhrak9QUU1CCkJ3TkNBQVFhVk5nN3NENmtkK0t3dEo4d2pvR3NJTTFncStBQkhNTWoxbGxHcDNIQlNVLzZ4ZnVpMDFCYmdIdVEKNXVQemRvanBXR25OWHU0WHFYZUtaVjZxdEFqSm8yRXdYekFPQmdOVkhROEJBZjhFQkFNQ0FvUXdIUVlEVlIwbApCQll3RkFZSUt3WUJCUVVIQXdFR0NDc0dBUVVGQndNQ01BOEdBMVVkRXdFQi93UUZNQU1CQWY4d0hRWURWUjBPCkJCWUVGRGxYc3Rmc0dVZzN5R2cxc2ZTODYrTmJZbFNGTUFvR0NDcUdTTTQ5QkFNQ0EwY0FNRVFDSUhiUWw4aEgKSjNJSDl1MWZydHhIWk16Zk5uejluZWd1b3Yrcis5aTJIY1RFQWlCZitsMTUrOUI0U2VnbTJRMFpBTEdWYTdWWgppcFVybEVDd25qak1XVmZlV3c9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    key: ""
+  discovery:
+    enabled: true
+    registries:
+      kubernetes:
+        disabled: true
+      service: {}
