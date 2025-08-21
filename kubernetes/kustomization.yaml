@@ -1,3 +1,0 @@
-resources:
-  - ./apps/networking/metallb/kustomization.yaml
-
