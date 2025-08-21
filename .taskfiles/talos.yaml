@@ -1,0 +1,30 @@
+version: "3"
+
+vars:
+  TALOS_DIR: "{{.ROOT_DIR}}/talos"
+  CONFS_DIR: "{{.TALOS_DIR}}/clusterconfig"
+  SECRET_FILE: "{{.TALOS_DIR}}/talsecret.yaml"
+  CONFIG_FILE: "{{.TALOS_DIR}}/talconfig.yaml"
+
+tasks:
+  genconfig:
+    cmds:
+      - talhelper genconfig -o "{{.CONFS_DIR}}" -s "{{.SECRET_FILE}}" -c "{{.CONFIG_FILE}}"
+
+  apply-config:
+    cmds:
+      - talosctl apply-config -n 192.168.1.40  --file "{{.CONFS_DIR}}"/talos-proxmox-cluster-master-0.yaml --insecure
+      - talosctl apply-config -n 192.168.1.41  --file "{{.CONFS_DIR}}"/talos-proxmox-cluster-worker-0.yaml --insecure
+      - talosctl apply-config -n 192.168.1.42  --file "{{.CONFS_DIR}}"/talos-proxmox-cluster-worker-1.yaml --insecure
+  bootstrap:
+    cmds:
+      - talosctl bootstrap --nodes 192.168.1.40  --endpoints 192.168.1.40  --talosconfig "{{.CONFS_DIR}}"/talosconfig
+
+  kubeconfig:
+    cmds:
+      - talosctl kubeconfig  "{{.TALOS_DIR}}" --nodes 192.168.1.40 --talosconfig "{{.CONFS_DIR}}"/talosconfig
+
+  test-config:
+    cmds:
+      - talosctl --talosconfig "{{.CONFS_DIR}}"/talosconfig containers
+

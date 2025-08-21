@@ -1,0 +1,11 @@
+version: "3"
+
+vars:
+  ANSIBLE_DIR: "{{.ROOT_DIR}}/ansible"
+  USER: node-0
+
+tasks:
+  apply:
+    cmds:
+      - ansible-playbook -i "{{.ANSIBLE_DIR}}"/hosts.ini "{{.ANSIBLE_DIR}}"/playbook.yml -u "{{.USER}}" --ask-pass --ask-become
+

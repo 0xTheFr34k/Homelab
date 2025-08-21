@@ -19,4 +19,4 @@ devenv.local.nix
 .pre-commit-config.yaml
 
 talos/talsecret.yaml
-talos/clusterconfig/
+talos/clusterconfig

@@ -1,0 +1,9 @@
+# https://taskfile.dev
+
+version: '3'
+
+includes:
+  talos:
+    taskfile: .taskfiles/talos.yaml
+
+  ansible: .taskfiles/ansible.yaml
