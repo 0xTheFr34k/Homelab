@@ -22,3 +22,5 @@ devenv.local.nix
 */clusterconfig
 */kubeconfig
 *.*secret*
+
+**/storage
