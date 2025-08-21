@@ -1,0 +1,30 @@
+
+version: "3"
+
+vars:
+  USERNAME: xTheFr34k
+  REPO: Homelab
+  PATH: kubernetes/apps
+  BRANCH: master
+
+tasks:
+  bootstrap:
+    cmds:
+      - flux bootstrap github --token-auth --owner="{{.USERNAME}}" --repository="{{.REPO}}" \
+        --branch="{{.BRANCH}}" --path="{{.PATH}}" --personal
+  status:
+    cmds:
+      - flux get all -A
+
+  sources:
+    cmds:
+      - flux get sources git -A
+
+  reconcile:
+    cmds:
+      - flux reconcile kustomization flux-system --with-source
+
+  sync:
+    cmds:
+      - flux reconcile source git  `flux get sources git -A | awk '{print $1}' | tail -1 | fzf`
+    silent: true

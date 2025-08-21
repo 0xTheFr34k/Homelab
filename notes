@@ -1,7 +1,0 @@
-flux bootstrap github \
-  --token-auth \
-  --owner=0xTheFr34k \
-  --repository=Homelab \
-  --branch=master \
-  --path=kubernetes/apps \
-  --personal
