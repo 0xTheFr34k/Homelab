@@ -18,5 +18,6 @@ devenv.local.nix
 # pre-commit
 .pre-commit-config.yaml
 
-talos/talsecret.yaml
-talos/clusterconfig
+*/talsecret.yaml
+*/clusterconfig
+*/kubeconfig
