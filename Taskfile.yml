@@ -7,3 +7,4 @@ includes:
     taskfile: .taskfiles/talos.yaml
 
   ansible: .taskfiles/ansible.yaml
+  terraform: .taskfiles/terraform.yaml
