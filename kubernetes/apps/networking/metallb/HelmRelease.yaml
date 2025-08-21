@@ -17,10 +17,9 @@ spec:
     createNamespace: true
   targetNamespace: metallb-system
   values:
-    configInline:
-      address-pools:
+    config:
+      addressPools:
         - name: default
           protocol: layer2
           addresses:
-            - 192.168.1.100-192.168.1.200
-
+            - 192.168.1.240-192.168.1.250
