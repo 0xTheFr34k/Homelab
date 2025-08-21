@@ -21,3 +21,4 @@ devenv.local.nix
 */talsecret.yaml
 */clusterconfig
 */kubeconfig
+*.*secret*

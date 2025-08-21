@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: github-deploy-key
+    namespace: flux-system
+stringData:
+    identity: ENC[AES256_GCM,data:+KypjBG0TtrEitt0DrUkDuAcFmdTs6HTaDmguQDqfxTLbkTz2k2iv9upGbtDvXSIEM8xokM3nOB/bpz30v2zmM/eDBpziAU1si2blTLcJ0IuyKFMznpITYm/THIs3aNc7wh0f0/zUsH5PUjwWv/ybE7/zs3PBZ6UpfTrYwqeCXQpLWCG/wc6w2YQo1fYp4w5zJjmWahI5mnV5drynmdgSQMXyAcTKwi260ezRT4eDpIbZBLLvRqgtlhJ8YUj0az6HipOp/KAqZ2AmpFjlCICpX+FtciZ2XKIY72I8zqXoBlplsuD/fpe+ismA66Hm8PcviluTsPktz+0q0LbfQoqrGeFEfCKOAMYxAiUvd84tVZaAR4x5CkGJzv/SEDPSspaeTUy0pLIPuEU+/vgVuAIgp7EZIDiXKIiGa5cU+ILZ+oV4GFSFuWiRkfYs12P77hOzzuI1X662LW7NDeQ1nwah0dM5m+m8Jbq/hdUgMfrPYPY3Fm95U6upYp54mV1lAzIcNYDuXRSWRgl7ov29km3JZD+YIkGEfI2N3/WD1uv+T6vqOo=,iv:KPmI2LPDDABjdeqR1gm1Ng3qci0Xxs/rTiItP75OqoI=,tag:0CKPIHIxTWUXgo3KUSFvTA==,type:str]
+    known_hosts: ENC[AES256_GCM,data:pdKt6Dijf9hYeCmZ/1t6HSUijAgRTmgGVEn7xT9i8pMvzaGHCD5zYWIKmyNRJKNNaf2x6M/pb1UynwAp52vTeuokE0LO3JZEksu6l7FxhSpkmXYYeZNTHSw8LeU=,iv:/UZZX+czzG3ndoVxKElqfHZQIntTUX0sbi/li4gryvU=,tag:zJFSQIvYTEhb8IvilmWYmg==,type:str]
+sops:
+    age:
+        - recipient: age1646qm78yl7jgjue8fkseywxn322sdg47jtrqqhvypcfsx6k3e96qj5564c
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA4VE9aRW1tQXZWUm5ZMEF1
+            MmV4TGUzU1Z4bzFwd2RJL3NlMVZRZDlzRWhnCnlDTHAvYS9acy90Qmx3QUFVNG1F
+            anNQZGVLcitBdXR4ZnMxbkxvam1VSmcKLS0tIEU1UEs5MVoyM0VrTWduTHB2Q2wy
+            cEt2eXNSRno5Y3BqcFF2MCtlR3piaWcKiVAZ9ifVMIB1hW/Ph/P0dMxhqvJR4evq
+            8tIebIcxVTp00NcOlnaGwN2aPEjOdDcILP0N6d3RXZgdBs9DQPWTuQ==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2025-08-21T13:22:30Z"
+    mac: ENC[AES256_GCM,data:VRrpA3Fq/mGnEFCLkVkV8cnXMOjzUVmr3DJ2QrX76eEpWrydEJs8uVGcVsX/b98ZeiLr05pAkgk+6zbewN6TVFV3ljYLYyLm0z4PVNSjfnrWxakPMDPEgdr53/2ME8SfnOzFwv5C3Y8NREc7v7WXVfrGP8JgmbP5I9nUw2/IeLg=,iv:qrUXUvnYujDZoMTKJ1roKnVAIWgYCyHZqFzKdEnccOU=,tag:emW2C4J9ZYVv6ecRoAom1A==,type:str]
+    encrypted_regex: ^(data|stringData|certs|secrets|cluster|token)$
+    mac_only_encrypted: true
+    version: 3.10.2

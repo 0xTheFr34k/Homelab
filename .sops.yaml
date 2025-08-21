@@ -1,5 +1,6 @@
 creation_rules:
   - path_regex: '(^|/)*(\.ya?ml)?$'
-    encrypted_regex: '^(certificate-authority-data|client-certificate-data|client-key-data)$'
+    encrypted_regex: '^(data|stringData|certs|secrets|cluster|token)$'
+    mac_only_encrypted: true
     age: age1646qm78yl7jgjue8fkseywxn322sdg47jtrqqhvypcfsx6k3e96qj5564c
 
