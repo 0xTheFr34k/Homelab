@@ -5,15 +5,15 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
-  path: "./metallb"
+  path: "./networking/metallb"
   prune: true
   sourceRef:
     kind: GitRepository
     name: flux-system
-  # Include the config files
+  # point only to manifest files or directories (no nested Kustomizations)
   resources:
-    - namespace.yaml
-    - ip-pool.yaml
-    - ../app/HelmRelease.yaml
-    - ../app/HelmRepository.yaml
+    - config/namespace.yaml
+    - config/ip-pool.yaml
+    - app/HelmRepository.yaml
+    - app/HelmRelease.yaml
 
