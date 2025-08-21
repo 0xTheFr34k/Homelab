@@ -2,7 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: traefik
-  namespace: kube-system
+  namespace: flux-system
 spec:
   interval: 5m
   chart:
@@ -13,6 +13,9 @@ spec:
         name: traefik
         namespace: flux-system
       version: "*"
+  install:
+    createNamespace: true   # ← this line tells Flux to create the target namespace
+  targetNamespace: traefik  # ← the namespace where Traefik will be installed
   values:
     dashboard:
       enabled: true
