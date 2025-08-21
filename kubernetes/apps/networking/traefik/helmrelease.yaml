@@ -1,14 +1,21 @@
-apiVersion: helm.toolkit.fluxcd.io/v2
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: my-traefik
-  namespace: traefik
+  name: traefik
+  namespace: kube-system
 spec:
+  interval: 5m
   chart:
     spec:
       chart: traefik
       sourceRef:
         kind: HelmRepository
         name: traefik
-      version: 9.18.2
-  interval: 1m0s
+        namespace: flux-system
+      version: "*"
+  values:
+    dashboard:
+      enabled: true
+    service:
+      type: LoadBalancer
+
