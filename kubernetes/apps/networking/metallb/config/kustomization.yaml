@@ -1,0 +1,19 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: metallb
+  namespace: flux-system
+spec:
+  interval: 10m
+  path: "./metallb"
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  # Include the config files
+  resources:
+    - namespace.yaml
+    - ip-pool.yaml
+    - ../app/HelmRelease.yaml
+    - ../app/HelmRepository.yaml
+
