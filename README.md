@@ -12,7 +12,7 @@ This repository contains my homelab setup using **Infrastructure as Code (IaC)**
   <a href="https://kubernetes.io/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" width="60" height="60"/></a>
   <a href="https://fluxcd.io/"><img src="https://fluxcd.io/img/flux-icon@2x.png" alt="FluxCD" width="60" height="60"/></a>
   <a href="https://www.talos.dev/"><img src="https://www.talos.dev/images/logo.svg" alt="Talos" width="60" height="60"/></a>
-  <a href="https://nixos.org/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nixos/nixos-original.svg" alt="Nix" width="60" height="60"/></a>
+  <a href="https://devenv.sh/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nixos/nixos-original.svg" alt="Nix" width="60" height="60"/></a>
   <a href="https://www.proxmox.com/"><img src="https://blog.zwindler.fr/2017/08/proxmox_logo.png" alt="Proxmox" width="60" height="60"/></a>
   <a href="https://taskfile.dev/"><img src="https://taskfile.dev/img/logo.png" alt="Task" width="60" height="60"/></a>
 </p>
