@@ -4,6 +4,6 @@ metadata:
   name: traefik
   namespace: traefik
 spec:
-  url: oci://ghcr.io/traefik/helm/traefik
-  type: oci
+  url: https://traefik.github.io/charts
+  # type: oci
 
