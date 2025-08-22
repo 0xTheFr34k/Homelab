@@ -2,9 +2,9 @@
 version: "3"
 
 vars:
-  USERNAME: xTheFr34k
+  USERNAME: 0xTheFr34k
   REPO: Homelab
-  PATH: kubernetes/apps
+  PATH: kubernetes
   BRANCH: master
 
 tasks:
