@@ -1,8 +1,9 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
-  name: nginx
-  namespace: nginx
+  name: traefik
+  namespace: traefik
 spec:
-  url: oci://ghcr.io/nginxinc/charts
+  url: oci://ghcr.io/traefik/helm/traefik
   type: oci
+
