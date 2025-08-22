@@ -1,0 +1,27 @@
+# 🏠 My Homelab
+
+This repository contains my homelab setup using modern infrastructure tools.  
+
+## 🚀 Stack
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/terraform/terraform-original.svg" alt="Terraform" width="60" height="60"/>
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/ansible/ansible-original.svg" alt="Ansible" width="60" height="60"/>
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" width="60" height="60"/>
+  <img src="https://avatars.githubusercontent.com/u/68358976?s=200&v=4" alt="FluxCD" width="60" height="60"/>
+  <img src="https://www.talos.dev/images/talos-logo.svg" alt="Talos" width="60" height="60"/>
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nixos/nixos-original.svg" alt="Nix" width="60" height="60"/>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Proxmox_logo.png" alt="Proxmox" width="100" height="40"/>
+</p>
+
+## 📂 Structure
+
+- **terraform/** → Infrastructure provisioning (Proxmox, etc.)
+- **ansible/** → Node configuration and automation
+- **talos/** → Cluster OS and secrets
+- **kubernetes/** → GitOps-managed workloads (Flux, apps, infra)
+- **devenv.nix** → Dev environment setup
+
+---
+💡 Built for learning, automation, and experimentation.
+
