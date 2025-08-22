@@ -7,7 +7,7 @@ metadata:
 spec:
   chart:
     spec:
-      chart: traefik-ingress
+      chart: traefik
       version: 3.5.0
       sourceRef:
         kind: HelmRepository
