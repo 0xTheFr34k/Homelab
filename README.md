@@ -19,13 +19,13 @@ This repository contains my homelab setup using **Infrastructure as Code (IaC)**
 
 ## 📂 Structure
 
-- **proxmox (bare-metal)** → Base hypervisor running all VMs and containers
-- **terraform/** → Infrastructure provisioning (VMs, networking, storage on Proxmox)
-- **ansible/** → Node configuration and automation
-- **talos/** → Kubernetes cluster OS + secrets
-- **kubernetes/** → GitOps-managed workloads (Flux, apps, infra)
-- **devenv.nix** → Developer environment setup
-- **Taskfile.yml** → Reproducible commands with [Task](https://taskfile.dev/)
+- **[Proxmox](https://www.proxmox.com/)** → Base hypervisor running all VMs and containers
+- **[terraform/](https://www.terraform.io/)** → Infrastructure provisioning (VMs, networking, storage on Proxmox)
+- **[ansible/](https://www.ansible.com/)** → Node configuration and automation
+- **[talos/](https://www.talos.dev/)** → Kubernetes cluster OS + secrets
+- **[kubernetes/](https://kubernetes.io/)** → GitOps-managed workloads (Flux, apps, infra)
+- **[devenv.nix](https://devenv.sh/)** → Developer environment setup
+- **[Taskfile.yml](https://taskfile.dev/)** → Reproducible commands with Task
 
 ---
 💡 Built for learning, automation, GitOps, and experimentation.
