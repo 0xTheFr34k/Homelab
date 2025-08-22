@@ -11,24 +11,29 @@ tasks:
   bootstrap:
     cmds:
       - flux bootstrap github --token-auth --owner="{{.USERNAME}}" --repository="{{.REPO}}" --branch="{{.BRANCH}}" --path="{{.PATH}}" --personal
+    silent: true
 
   status:
     cmds:
       - flux get all -A
+    silent: true
 
   kustomization:
     cmds:
-      - flux get kustomization
+      - flux get kustomization {{if .CLI_ARGS}} {{.CLI_ARGS}} {{end}}
+    silent: true
 
   sources:
     cmds:
       - flux get sources git -A
+    silent: true
 
   reconcile:
     cmds:
       - flux reconcile kustomization flux-system --with-source
+    silent: true
 
   sync:
     cmds:
-      - flux reconcile source git  `flux get sources git -A | awk '{print $1}' | tail -1 | fzf`
+      - flux reconcile source git  $(flux get sources git -A | awk 'NR>1 {print $2}' | fzf)
     silent: true

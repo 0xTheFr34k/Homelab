@@ -8,4 +8,4 @@ tasks:
   apply:
     cmds:
       - ansible-playbook -i "{{.ANSIBLE_DIR}}"/hosts.ini "{{.ANSIBLE_DIR}}"/playbook.yml -u "{{.USER}}" --ask-pass --ask-become
-
+    silent: true

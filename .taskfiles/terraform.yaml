@@ -5,4 +5,5 @@ tasks:
   init:
     cmds:
       - terraform init -plugin-dir="{{.HOME}}"/.terraform.d/plugins -upgrade
+    silent: true
 
