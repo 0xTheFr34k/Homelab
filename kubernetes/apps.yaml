@@ -4,7 +4,7 @@ metadata:
   name: apps
   namespace: flux-system
 spec:
-  path: ./staging
+  path: ./apps/staging
   prune: true
   interval: 5m
   sourceRef:
