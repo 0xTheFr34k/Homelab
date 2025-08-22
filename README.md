@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/homelab.png" alt="Homelab Architecture" width="800"/>
+  <img src="docs/assets/homelab.png" alt="Homelab Architecture" width="30%"/>
 </p>
 
 This repository contains my homelab setup using **Infrastructure as Code (IaC)** and modern automation tools, running on **bare-metal Proxmox**.  
