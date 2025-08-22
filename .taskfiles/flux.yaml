@@ -34,7 +34,8 @@ tasks:
   reconcile:
     aliases: ["rec"]
     cmds:
-      - flux reconcile kustomization flux-system --with-source
+      - flux reconcile kustomization $(kubectl get kustomization -A | awk 'NR>1 {print $2}' | fzf --header=kustomizations) --with-source -n $(kubectl get ns -A | awk 'NR>1 {print $1}' | fzf --header=namespaces)
+    # desc: flux:rec -- name -n namespace
     silent: true
 
   sync:
