@@ -14,21 +14,25 @@ tasks:
     silent: true
 
   status:
+    aliases: ["sts"]
     cmds:
       - flux get all -A
     silent: true
 
   kustomization:
+    aliases: ["kst"]
     cmds:
       - flux get kustomization {{if .CLI_ARGS}} {{.CLI_ARGS}} {{end}}
     silent: true
 
   sources:
+    aliases: ["src"]
     cmds:
       - flux get sources git -A
     silent: true
 
   reconcile:
+    aliases: ["rec"]
     cmds:
       - flux reconcile kustomization flux-system --with-source
     silent: true

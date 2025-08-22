@@ -9,3 +9,10 @@ includes:
   ansible: .taskfiles/ansible.yaml
   terraform: .taskfiles/terraform.yaml
   flux: .taskfiles/flux.yaml
+
+
+tasks:
+  default:
+    cmds:
+      - task --list-all
+    silent: true
