@@ -29,7 +29,6 @@ spec:
       enabled: true
       ingressClassName: traefik
       host: portainer.local
-      tls: true
       path: /
     persistence:
       enabled: true
