@@ -30,6 +30,10 @@ spec:
       ingressClassName: traefik
       host: portainer.local
       path: /
+      tls:
+        - hosts:
+            - portainer.local
+          secretName: portainer-tls
     persistence:
       enabled: true
       size: "10Gi"
