@@ -39,6 +39,7 @@ spec:
       enabled: true
       size: "10Gi"
       storageClass: longhorn
-      defaultClassReplicaCount: 2
+      annotations:
+        longhorn.io/replica-count: "2"
       # existingClaim: portainer-volume #
 
