@@ -39,4 +39,6 @@ spec:
     defaultSettings:
       storageReservedPercentageForDefaultDisk: 15
       storageOverProvisioningPercentage: 200
+      # defaultClassReplicaCount: 2
+    persistence:
       defaultClassReplicaCount: 2
