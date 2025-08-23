@@ -11,6 +11,8 @@ tasks:
   bootstrap:
     cmds:
       - flux bootstrap github --token-auth --owner="{{.USERNAME}}" --repository="{{.REPO}}" --branch="{{.BRANCH}}" --path="{{.PATH}}" --personal
+      - kubectl -n flux-system create secret generic sops-age --from-file=age.agekey=$HOME/.config/sops/age/keys.txt
+
     silent: true
 
   status:
