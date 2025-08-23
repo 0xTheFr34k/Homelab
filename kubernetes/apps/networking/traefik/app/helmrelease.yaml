@@ -43,7 +43,7 @@ spec:
     - --global.checknewversion=false
     ingressRoute:
       dashboard:
-        enabled: false
+        enabled: true
     ports:
       web:
         redirections:
@@ -65,10 +65,6 @@ spec:
       enabled: true
       publishedService:
         enabled: false 
-    # tlsStore:
-    #   default:
-    #     defaultCertificate:
-    #       secretName: internal-default-tls
     rbac:
       enabled: true
     service:

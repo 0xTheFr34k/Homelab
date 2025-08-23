@@ -28,9 +28,6 @@ spec:
       strategy: rollback
       retries: 3
   values:
-    # metrics:
-    #   serviceMonitor:
-    #     enabled: true
     ingress:
       enabled: true
       ingressClassName: traefik
@@ -39,10 +36,6 @@ spec:
       secureBackends: true
       tlsSecret: longhorn-tls
       path: /
-      # annotations:
-      #   traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-      #   traefik.ingress.kubernetes.io/router.middlewares: networking-ipwhitelist@kubernetescrd
-      #   cert-manager.io/cluster-issuer: letsencrypt-production-internal
     defaultSettings:
       storageReservedPercentageForDefaultDisk: 15
       storageOverProvisioningPercentage: 200

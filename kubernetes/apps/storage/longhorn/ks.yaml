@@ -4,15 +4,13 @@ kind: Kustomization
 metadata:
   name: &app longhorn
   namespace: flux-system
-  # labels: 
-    # substitution.flux.home.arpa/disabled: "true" #don't do a sub here so we can bring in secret values
 spec:
   targetNamespace: longhorn-system
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  # dependsOn:
-  #   - name: traefik
+  dependsOn:
+    - name: traefik
   path: ./kubernetes/apps/storage/longhorn/app
   prune: true
   sourceRef:
