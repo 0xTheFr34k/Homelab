@@ -2,3 +2,4 @@ resources:
   - metallb.yaml
   - traefik.yaml
   - longhorn.yaml
+  - portainer.yaml
