@@ -18,7 +18,6 @@ spec:
     crds: Create
     remediation:
       retries: 3
-    # createNamespace: true
   interval: 1m0s
   releaseName: traefik
   targetNamespace: networking
@@ -28,74 +27,56 @@ spec:
     remediation:
       strategy: rollback
       retries: 3
-  # values:
-    # additionalArguments:
-    # - --serversTransport.insecureSkipVerify=true
-    # - --log.level=DEBUG
-    # deployment:
-    #   additionalContainers: []
-    #   annotations: {}
-    #   enabled: true
-    #   initContainers: []
-    #   podAnnotations: {}
-    #   replicas: 2
-    # tracing:
-    #   otlp:
-    #     http:
-    #       endpoint: ${ACTIVEGATE_TRACES_URL}
-    # globalArguments:
-    # - --global.sendanonymoususage=false
-    # - --global.checknewversion=false
-    # ingressRoute:
-    #   dashboard:
-    #     enabled: false
-    # ports:
-    #   web:
-    #     redirections:
-    #       entrypoint:
-    #         to: websecure
-    #         scheme: https
-    #         permanent: true
-    #   websecure:
-    #     tls:
-    #       enabled: true
-    #   metrics:
-    #     port: 8082
-    #     expose:
-    #       default: true
-    #     exposedPort: 8082
-    # providers:
-    #   kubernetesCRD:
-    #     allowExternalNameServices: true
-    #     allowCrossNamespace: true
-    #     enabled: true
-    #     ingressClass: traefik
-    #   kubernetesIngress:
-    #     allowExternalNameServices: true
-    #     enabled: true
-    #     publishedService:
-    #       enabled: false
-    # metrics:
-    #   prometheus:
-    #     enabled: true
-    #     entryPoint: metrics
-    #     service:
-    #       enabled: true
-    #     serviceMonitor:
-    #       enabled: true
-    # # tlsStore:
-    # #   default:
-    # #     defaultCertificate:
-    # #       secretName: internal-default-tls
-    # rbac:
-    #   enabled: true
-    # service:
-    #   annotations: {}
-    #   enabled: true
-    #   externalIPs: []
-    #   labels: {}
-    #   loadBalancerSourceRanges: []
-    #   spec:
-    #     externalTrafficPolicy: Local
-    #   #   loadBalancerIP: "${TRAEFIK_INTERNAL_IP}"
-    #   type: LoadBalancer
+  values:
+    additionalArguments:
+    - --serversTransport.insecureSkipVerify=true
+    - --log.level=DEBUG
+    deployment:
+      additionalContainers: []
+      annotations: {}
+      enabled: true
+      initContainers: []
+      podAnnotations: {}
+      replicas: 2
+    globalArguments:
+    - --global.sendanonymoususage=false
+    - --global.checknewversion=false
+    ingressRoute:
+      dashboard:
+        enabled: false
+    ports:
+      web:
+        redirections:
+          entrypoint:
+            to: websecure
+            scheme: https
+            permanent: true
+    websecure:
+      tls:
+        enabled: true
+    providers:
+      kubernetesCRD:
+        allowExternalNameServices: true
+        allowCrossNamespace: true
+        enabled: true
+        ingressClass: traefik
+    kubernetesIngress:
+      allowExternalNameServices: true
+      enabled: true
+      publishedService:
+        enabled: false 
+    # tlsStore:
+    #   default:
+    #     defaultCertificate:
+    #       secretName: internal-default-tls
+    rbac:
+      enabled: true
+    service:
+      annotations: {}
+      enabled: true
+      externalIPs: []
+      labels: {}
+      loadBalancerSourceRanges: []
+      spec:
+        externalTrafficPolicy: Local
+      type: LoadBalancer

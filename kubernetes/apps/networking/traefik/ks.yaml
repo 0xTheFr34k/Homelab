@@ -9,8 +9,8 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: traefik
-  # dependsOn:
-  #   - name: metallb
+  dependsOn:
+    - name: metallb
   path: ./kubernetes/apps/networking/traefik/app
   prune: true
   sourceRef:
@@ -19,27 +19,3 @@ spec:
   wait: true
   interval: 1m
   timeout: 20m
-
-
-# ---
-# apiVersion: kustomize.toolkit.fluxcd.io/v1
-# kind: Kustomization
-# metadata:
-#   name: &app traefik-middlewares
-#   namespace: flux-system
-# spec:
-#   targetNamespace: networking
-#   commonMetadata:
-#     labels:
-#       app.kubernetes.io/name: traefik-middlewares
-#   dependsOn:
-#     - name: traefik
-#   path: ./kubernetes/apps/networking/traefik/middlewares
-#   prune: true
-#   sourceRef:
-#     kind: GitRepository
-#     name: flux-system
-#   wait: true
-#   interval: 1m
-#   retryInterval: 1m
-#   timeout: 5m
