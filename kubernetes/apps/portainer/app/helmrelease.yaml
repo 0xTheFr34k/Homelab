@@ -1,0 +1,39 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: portainer
+  namespace: flux-system
+spec:
+  chart:
+    spec:
+      chart: portainer
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: portainer
+        namespace: flux-system
+      version: 2.33.0
+  interval: 1m0s
+  releaseName: portainer
+  targetNamespace: portainer
+  upgrade:
+    crds: CreateReplace
+    disableWait: true
+    cleanupOnFail: true
+    remediation:
+      strategy: rollback
+      retries: 3
+  values:
+    ingress:
+      enabled: true
+      ingressClassName: traefik
+      host: portainer.local
+      tls: true
+      path: /
+    persistence:
+      enabled: true
+      size: "10Gi"
+      storageClass: longhorn
+      # existingClaim:
+
