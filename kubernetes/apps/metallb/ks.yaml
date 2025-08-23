@@ -9,7 +9,7 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  path: ./kubernetes/clusters/staging/metallb/app
+  path: ./kubernetes/apps/metallb/app
   prune: true
   sourceRef:
     kind: GitRepository
@@ -32,7 +32,7 @@ spec:
       app.kubernetes.io/name: *app
   # dependsOn:
   #   - name: metallb
-  path: ./kubernetes/clusters/staging/metallb/config
+  path: ./kubernetes/apps/metallb/config
   prune: true
   sourceRef:
     kind: GitRepository
