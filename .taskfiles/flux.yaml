@@ -4,7 +4,7 @@ version: "3"
 vars:
   USERNAME: 0xTheFr34k
   REPO: Homelab
-  PATH: kubernetes/clusters/staging
+  PATH: kubernetes
   BRANCH: master
 
 tasks:
