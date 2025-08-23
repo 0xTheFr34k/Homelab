@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./kubernetes/infastructure/base
+  path: ./kubernetes/infastructure/staging
   prune: true
   sourceRef:
     kind: GitRepository

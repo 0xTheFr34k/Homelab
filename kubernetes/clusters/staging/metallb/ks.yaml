@@ -1,0 +1,49 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: &app metallb
+  namespace: flux-system
+spec:
+  targetNamespace: metallb-system
+  commonMetadata:
+    labels:
+      app.kubernetes.io/name: *app
+  path: ./kubernetes/clusters/staging/metallb/app
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  wait: true
+  interval: 1m
+  retryInterval: 1m
+  timeout: 5m
+
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: &app metallb-config
+  namespace: flux-system
+spec:
+  targetNamespace: metallb-system
+  commonMetadata:
+    labels:
+      app.kubernetes.io/name: *app
+  # dependsOn:
+  #   - name: metallb
+  path: ./kubernetes/clusters/staging/metallb/config
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  wait: true
+  interval: 1m
+  retryInterval: 1m
+  timeout: 5m
+  # postBuild:
+  # substituteFrom:
+  #   - kind: Secret
+  #     name: cluster-secrets
+
+
