@@ -28,12 +28,13 @@ spec:
     ingress:
       enabled: true
       ingressClassName: traefik
-      host: portainer.local
-      path: /
-      tls:
-        - hosts:
-            - portainer.local
-          secretName: portainer-tls
+      annotations: {}
+      hosts:
+        - host: portainer.local
+          paths:
+            - path: /
+              pathType: Prefix
+      tls: []
     persistence:
       enabled: true
       size: "10Gi"
