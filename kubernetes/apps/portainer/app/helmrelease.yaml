@@ -39,5 +39,6 @@ spec:
       enabled: true
       size: "10Gi"
       storageClass: longhorn
+      defaultClassReplicaCount: 2
       # existingClaim:
 
