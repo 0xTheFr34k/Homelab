@@ -15,5 +15,5 @@ spec:
       interval: 1h
   interval: 1h
   releaseName: metallb
-values:
-  installCRDs: true
+  values:
+    installCRDs: true
