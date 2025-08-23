@@ -40,5 +40,5 @@ spec:
       size: "10Gi"
       storageClass: longhorn
       defaultClassReplicaCount: 2
-      existingClaim: portainer-volume
+      # existingClaim: portainer-volume #
 
