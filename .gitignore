@@ -1,5 +1,5 @@
 *.env
-*.terraform
+**.terraform
 *.tfstate
 *.tfstate.backup
 *.log
