@@ -18,6 +18,4 @@ flowchart TD
 3. **SOPS Secrets**: Flux decrypts secrets automatically before applying them.  
 4. **Applications Deployment**: Flux deploys apps (Traefik, MetalLB, Longhorn, etc.) using manifests and decrypted secrets.  
 
-This keeps the explanation **linear from repo → Flux → secrets → apps in the cluster**.
-
-```
+This illustrates the flow from the Git repository through FluxCD, where SOPS secrets are decrypted, to the applications running in the cluster.
