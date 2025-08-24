@@ -20,6 +20,7 @@ spec:
       existingSecret: pihole-password
     persistentVolumeClaim:
       enabled: true
+      size: "20Gi"
     serviceWeb:
       type: LoadBalancer
       loadBalancerIP: 192.168.1.101
