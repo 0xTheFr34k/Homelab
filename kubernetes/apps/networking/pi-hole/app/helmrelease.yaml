@@ -23,6 +23,8 @@ spec:
       loadBalancerIP: 192.168.1.101
       annotations:
         metallb.universe.tf/allow-shared-ip: pihole-svc
+        external-dns.alpha.kubernetes.io/hostname: pihole.lab.local
+        external-dns.alpha.kubernetes.io/ttl: "60"
     serviceDns:
       type: LoadBalancer
       loadBalancerIP: 192.168.1.101
