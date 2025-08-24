@@ -72,7 +72,7 @@ spec:
         - --txt-owner-id=external-dns
         # IMPORTANT: If you have records that you manage manually in Pi-hole, set
         # the policy to upsert-only so they do not get deleted.
-        - --policy=upsert-only
+        - --policy=sync
         - --provider=pihole
         # Switch to pihole V6 API
         - --pihole-api-version=6
