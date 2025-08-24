@@ -4,3 +4,4 @@ resources:
   - longhorn.yaml
   - portainer.yaml
   - cnpg.yaml
+  - pi-hole.yaml

@@ -5,3 +5,4 @@ resources:
   # Post Flux-Kustomizations
   - ./metallb/ks.yaml
   - ./traefik/ks.yaml
+  - ./pi-hole/ks.yaml

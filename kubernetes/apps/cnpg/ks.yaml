@@ -6,6 +6,8 @@ metadata:
 spec:
   interval: 5m
   path: ./kubernetes/apps/cnpg/app
+  dependsOn:
+    - name: longhorn
   prune: true
   sourceRef:
     kind: GitRepository
