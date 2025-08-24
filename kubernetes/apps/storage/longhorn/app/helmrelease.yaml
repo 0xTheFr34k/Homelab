@@ -31,7 +31,7 @@ spec:
     ingress:
       enabled: true
       ingressClassName: traefik
-      host: longhorn.local
+      host: longhorn.lab.local
       tls: true
       secureBackends: true
       tlsSecret: longhorn-tls
