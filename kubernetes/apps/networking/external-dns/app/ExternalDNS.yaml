@@ -61,7 +61,7 @@ spec:
         envFrom:
         - secretRef:
             # Change this if you gave the secret a different name
-            name: pihole-password
+            name: pihole-password-dns
         args:
         - --source=service
         - --source=ingress
