@@ -10,7 +10,7 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  path: ./kubernetes/apps/networking/pihole/app
+  path: ./kubernetes/apps/networking/pi-hole/app
   dependsOn:
   - name: longhorn
   - name: metallb
