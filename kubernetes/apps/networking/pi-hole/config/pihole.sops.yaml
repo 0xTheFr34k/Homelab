@@ -3,7 +3,7 @@ kind: Secret
 metadata:
     namespace: pihole
     name: pihole-password
-data:
+stringData:
     password: ENC[AES256_GCM,data:ktwUfc0=,iv:lGh5lUZKMfSuXwvcZRncGlt99ByZNQTByY9Kc8zCuFE=,tag:q+X8EYbENNDAa+5ZTxrpOw==,type:str]
 sops:
     age:
