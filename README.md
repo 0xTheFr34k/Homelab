@@ -28,6 +28,12 @@ This repository contains my homelab setup using **Infrastructure as Code (IaC)**
 - **[devenv.nix](https://devenv.sh/)** → Developer environment setup
 - **[Taskfile.yml](https://taskfile.dev/)** → Reproducible commands with Task
 
+## 🌾 Core
+- [Longhorn](https://longhorn.io/) - distributed block storage for Kubernetes.
+- [Metallb](https://metallb.universe.tf/) - load-balancer for bare metal Kubernetes clusters.
+- [Traefik](https://github.com/traefik/traefik) - HTTP reverse proxy and load balancer.
+- [CloudNativePG](https://cloudnative-pg.io/) - highly available PostgreSQL database cluster.
+
 ---
 💡 Built for learning, automation, GitOps, and experimentation.
 
