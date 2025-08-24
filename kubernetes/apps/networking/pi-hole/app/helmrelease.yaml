@@ -16,6 +16,8 @@ spec:
       interval: 60m
   targetNamespace: pihole
   values:
+    admin:
+      existingSecret: pihole-password
     persistentVolumeClaim:
       enabled: true
     serviceWeb:
