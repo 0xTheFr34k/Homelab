@@ -6,3 +6,4 @@ resources:
   - ./metallb/ks.yaml
   - ./traefik/ks.yaml
   - ./pi-hole/ks.yaml
+  - ./external-dns/ks.yaml
