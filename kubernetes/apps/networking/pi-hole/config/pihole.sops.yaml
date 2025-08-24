@@ -4,20 +4,20 @@ metadata:
     namespace: pihole
     name: pihole-password
 stringData:
-    password: ENC[AES256_GCM,data:ktwUfc0=,iv:lGh5lUZKMfSuXwvcZRncGlt99ByZNQTByY9Kc8zCuFE=,tag:q+X8EYbENNDAa+5ZTxrpOw==,type:str]
+    password: ENC[AES256_GCM,data:PffFseQ=,iv:QayBwHh2T02tMT8b0R9fmPkRqvhRso4uAT/I59rMHoM=,tag:DGDQR9gmRcrgSs7C4bHeTQ==,type:str]
 sops:
     age:
         - recipient: age1646qm78yl7jgjue8fkseywxn322sdg47jtrqqhvypcfsx6k3e96qj5564c
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBIOUc4M1FaSzFYdVRUR1U0
-            b0ppa3dqSG9Fam10bEpVM3F6VGswNUl0MlNJCjB6Y0hxYThOeThZNlp0KzRTK1Vt
-            eFhNeXhITmVYUitqemxPYWVYcDNKdDQKLS0tIDlMWHJiTS9ucm1vdFJ1QWd0S21o
-            QnBQTldBOUxUa3ljZGp2c21ZSUFmZDAKP97pMwr0Vxx+Po1Zvlly9jTrMa2cB1RN
-            w1e699wKTKYkAX7Ba2hIbIhrnaQHkfhfyajJZIwobS3nFSFHV+nk8g==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBNNEF0SGdpdU9UTGVKVmhC
+            S3ppRGNSVVNwbUNwdmV4eWlaRXkzWE5TNmxzCjdLNWY4OWN5Vnh2WGwrdzdtVS9v
+            UWI0TlpFMkNrWUd0L3N6TEhSTWN0TE0KLS0tIGwycUd6eC9qcWdIZ2dzenQ5MEx4
+            N2wvc0dlN0kyQkQ4WTVGYS9NZlRqN1kKIbWQvK8x3sM5PgBacO27BcEcBNLRTkJh
+            V92JeDFkZ8ke+dLaO8ivsh/2zU6ijI9b+54IqL5qdxycgCGRQKArWw==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-08-24T17:56:48Z"
-    mac: ENC[AES256_GCM,data:NWcd0hh3RjNqYnBWPSW83ZTE8sJHiSEWb91TObd9YoUjOXEC9xJmDLZEDyoC7F+sLEx/me0g94A5NUR3EOROCsYUjvp9wA/zWBtJDchfIMkBoIUaNAI81dQFvFj8qYVThl6Y+srQ6QQykcHdrA5d9K6S7lwFkHOKSi7U8dNgXQs=,iv:2TakeYLxg7/XLlOG0fDCSLTKwYDUaT6sRRQX/lnjtdE=,tag:wbA6FLayPO5DzQVn3yIpRA==,type:str]
+    lastmodified: "2025-08-24T18:18:07Z"
+    mac: ENC[AES256_GCM,data:3fLI9BnGfeFgO3J3XtM8jwiv/d1DZ+5NNwDrF/Yl1PRJhhbwkecTMqpVqw4cLmRUhFy2/v9FMAVn8q3TJIzwiuFV22EtfzCoO+F/3hu3lyDwbvBwsSZRGSs8n+4WjnOaQvRisv39BSFsvzzEcONAY7wDFgtUMUbPFxE4NfpUMjw=,iv:EoB/RD1gy5/nOZ8vS/kR+gyJeyy5JJHpGDgZ9Kqdaz0=,tag:bFgipNBXZLwYZFLuswnHIQ==,type:str]
     encrypted_regex: ^(data|stringData|certs|secrets|cluster|token)$
     mac_only_encrypted: true
     version: 3.10.2

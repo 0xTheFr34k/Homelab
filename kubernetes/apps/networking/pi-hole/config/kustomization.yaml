@@ -1,0 +1,2 @@
+resources:
+  - ./pihole.sops.yaml
