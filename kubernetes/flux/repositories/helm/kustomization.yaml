@@ -3,3 +3,4 @@ resources:
   - traefik.yaml
   - longhorn.yaml
   - portainer.yaml
+  - cnpg.yaml
