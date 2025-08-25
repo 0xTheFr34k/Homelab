@@ -31,13 +31,14 @@ spec:
     additionalArguments:
     - --serversTransport.insecureSkipVerify=true
     - --log.level=DEBUG
-    daemonset:
-      enabled: true
-      replicas: null
+    # daemonset:
+    #   enabled: true
+    #   replicas: null
     deployment:
       # additionalContainers: []
       # annotations: {}
-      enabled: false
+      enabled: true
+      kind: Daemonset
       # initContainers: []
       # podAnnotations: {}
       # replicas: 2
