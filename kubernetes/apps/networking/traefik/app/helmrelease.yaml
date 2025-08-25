@@ -31,23 +31,19 @@ spec:
     additionalArguments:
     - --serversTransport.insecureSkipVerify=true
     - --log.level=DEBUG
-    # daemonset:
-    #   enabled: true
-    #   replicas: null
     deployment:
-      # additionalContainers: []
-      # annotations: {}
+      additionalContainers: []
+      annotations: {}
       enabled: true
-      kind: Daemonset
-      # initContainers: []
-      # podAnnotations: {}
-      # replicas: 2
+      initContainers: []
+      podAnnotations: {}
+      replicas: 2
     globalArguments:
     - --global.sendanonymoususage=false
     - --global.checknewversion=false
     ingressRoute:
       dashboard:
-        enabled: true
+        enabled: false
     ports:
       web:
         redirections:
