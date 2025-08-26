@@ -77,7 +77,8 @@ spec:
         - --pihole-api-version=6
         # Change this to the actual address of your Pi-hole web server
         - --pihole-server=http://192.168.1.101
-        - --regex-domain-exclusion=.ytaya.site
+        - --regex-domain-filter=.*\.ytaya\.site
+        - --regex-domain-exclusion=.*\.ytaya\.site
       securityContext:
         fsGroup: 65534 # For ExternalDNS to be able to read Kubernetes token files
 
