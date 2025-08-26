@@ -7,4 +7,4 @@ resources:
   - ./traefik/ks.yaml
   - ./pi-hole/ks.yaml
   - ./external-dns/ks.yaml
-  # - ./cloudflared/ks.yaml
+  - ./cloudflared/ks.yaml
