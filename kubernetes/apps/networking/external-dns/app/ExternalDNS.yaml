@@ -79,6 +79,7 @@ spec:
         - --pihole-server=http://192.168.1.101
         - --regex-domain-filter=.*\.ytaya\.site
         - --regex-domain-exclusion=.*\.ytaya\.site
+
       securityContext:
         fsGroup: 65534 # For ExternalDNS to be able to read Kubernetes token files
 
