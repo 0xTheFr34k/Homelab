@@ -1,0 +1,14 @@
+expose:
+  type: ingress
+  tls:
+    enabled: true
+  ingress:
+    hosts:
+      core: harbor.ytaya.site
+    className: "traefik"
+
+externalURL: https://harbor.ytaya.site
+
+registry:
+  relativeurls: true
+

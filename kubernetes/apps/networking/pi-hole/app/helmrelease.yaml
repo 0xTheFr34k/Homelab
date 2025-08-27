@@ -39,3 +39,8 @@ spec:
       nameservers:
         - 127.0.0.1
         - 8.8.8.8
+    adlists:
+      - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+      - https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/porn/hosts
+      - https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-only/hosts
+      - https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/gambling-only/hosts

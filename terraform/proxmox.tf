@@ -4,9 +4,9 @@ variable "masters" {
       name        = "k8s-master-0"
       vmid        = 100
       target_node = "proxmox"
-      cpu         = 4
-      memory      = 4000
-      disk        = "100G"
+      cpu         = 6
+      memory      = 6000
+      disk        = "200G"
       storage     = "local-lvm"
       macaddr     = "BC:24:11:25:C3:77"
     }
@@ -19,22 +19,22 @@ variable "workers" {
       name        = "k8s-worker-0"
       vmid        = 200
       target_node = "proxmox"
-      cpu         = 6
-      memory      = 6000
-      disk        = "350G"
+      cpu         = 10
+      memory      = 10000
+      disk        = "700G"
       storage     = "local-lvm"
       macaddr     = "BC:24:11:FF:D9:DE"
     }
-    worker1 = {
-      name        = "k8s-worker-1"
-      vmid        = 201
-      target_node = "proxmox"
-      cpu         = 6
-      memory      = 6000
-      disk        = "350G"
-      storage     = "local-lvm"
-      macaddr     = "BC:24:11:71:D7:CF"
-    }
+    # worker1 = {
+    #   name        = "k8s-worker-1"
+    #   vmid        = 201
+    #   target_node = "proxmox"
+    #   cpu         = 6
+    #   memory      = 6000
+    #   disk        = "350G"
+    #   storage     = "local-lvm"
+    #   macaddr     = "BC:24:11:71:D7:CF"
+    # }
   }
 }
 

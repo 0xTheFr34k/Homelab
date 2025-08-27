@@ -16,7 +16,7 @@ tasks:
     cmds:
       - talosctl apply-config -n 192.168.1.40  --file "{{.CONFS_DIR}}"/talos-proxmox-cluster-master-0.yaml --insecure
       - talosctl apply-config -n 192.168.1.41  --file "{{.CONFS_DIR}}"/talos-proxmox-cluster-worker-0.yaml --insecure
-      - talosctl apply-config -n 192.168.1.42  --file "{{.CONFS_DIR}}"/talos-proxmox-cluster-worker-1.yaml --insecure
+      # - talosctl apply-config -n 192.168.1.42  --file "{{.CONFS_DIR}}"/talos-proxmox-cluster-worker-1.yaml --insecure
     silent: true
 
   bootstrap:
