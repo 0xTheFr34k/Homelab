@@ -18,7 +18,7 @@
   "description": "Update any HelmRelease chart with inline repo URL",
   "fileMatch": [".*\\.ya?ml$"],
 "matchStrings": [
-  "chart:\\s*\\n\\s*spec:\\s*\\n\\s*chart:\\s*(?<depName>[a-zA-Z0-9._-]+)(?:(?!version).)*?#\\s*repo:\\s*(?<registryUrl>https?://[^\\s]+).*?version:\\s*(?<currentValue>[0-9a-zA-Z._-]+)"
+  "chart:\\s*\\n\\s*spec:\\s*\\n\\s*chart:\\s*(?<depName>[a-zA-Z0-9._-]+)\\s*\\n\\s*#\\s*repo:\\s*(?<registryUrl>https?://[^\\s]+)\\s*\\n\\s*version:\\s*(?<currentValue>[0-9a-zA-Z._-]+)"
 ],
   "datasourceTemplate": "helm",
   "depNameTemplate": "{{depName}}",
