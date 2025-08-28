@@ -8,7 +8,7 @@
   "commitMessageAction": "update",
   "commitMessageTopic": "{{depName}}",
   "commitMessageExtra": "to {{newVersion}}",
-  "prBodyTemplate": "This PR updates {{depName}} from `{{currentVersion}}` to `{{newVersion}}`.\n\n{{{changelogs}}}\n\n{{{controls}}}",
+  "prBodyTemplate": "{{{changelogs}}}\n\n{{{controls}}}",
   "ignoreTests": true,
   "labels": [
     "dependencies",
