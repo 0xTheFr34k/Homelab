@@ -42,6 +42,7 @@
   "ignorePaths": [
     "**/*.sops.*",
     "**/practice/**",
+    "**/gotk-sync.yaml"
   ],
 }
 
