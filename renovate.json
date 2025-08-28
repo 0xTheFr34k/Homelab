@@ -14,7 +14,7 @@
     "dependencies",
     "renovate"
   ],
-  "enabledManagers": ["flux", "regex", "docker"],
+  "enabledManagers": ["flux", "regex"],
   "managers": {
     "flux": {
       "managerFilePatterns": ["/flux/.+\\.ya?ml$", "/apps/.+\\.ya?ml$"]
