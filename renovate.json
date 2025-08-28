@@ -15,24 +15,20 @@
     "renovate"
   ],
   "enabledManagers": ["flux", "regex"],
-  "managers": {
-    "flux": {
-      "managerFilePatterns": ["/flux/.+\\.ya?ml$", "/apps/.+\\.ya?ml$"]
-    },
-    "regex": {
-      "customManagers": [
-        {
-          "customType": "regex",
-          "description": "Update container image tags in YAML",
-          "fileMatch": [".*\\.ya?ml$"],
-          "matchStrings": [
-            "image:\\s*(?<depName>.*?):(?<currentValue>[a-zA-Z0-9._-]+)"
-          ],
-          "datasourceTemplate": "docker"
-        }
-      ]
-    }
+  "flux": {
+    "managerFilePatterns": ["/flux/.+\\.ya?ml$", "/apps/.+\\.ya?ml$"]
   },
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Update container image tags in YAML",
+      "fileMatch": [".*\\.ya?ml$"],
+      "matchStrings": [
+        "image:\\s*(?<depName>.*?):(?<currentValue>[a-zA-Z0-9._-]+)"
+      ],
+      "datasourceTemplate": "docker"
+    }
+  ],
   "vulnerabilityAlerts": {
     "enabled": true,
     "labels": [
