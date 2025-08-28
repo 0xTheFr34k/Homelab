@@ -8,7 +8,6 @@
   "commitMessageAction": "update",
   "commitMessageTopic": "{{depName}}",
   "commitMessageExtra": "to {{newVersion}}",
-  "prTitle": "update {{depName}} to {{newVersion}}",
   "prBodyTemplate": "This PR updates {{depName}} from `{{currentVersion}}` to `{{newVersion}}`.\n\n{{{changelogs}}}\n\n{{{controls}}}",
   "ignoreTests": true,
   "labels": [
