@@ -22,7 +22,10 @@
       "matchStrings": [
         "kind:\\s*HelmRepository[\\s\\S]*?metadata:\\s*\\n[\\s\\S]*?name:\\s*(?<id>[a-zA-Z0-9._-]+)[\\s\\S]*?url:\\s*(?<url>https?://[^\\s]+)"
       ],
-      "datasourceTemplate": "helm-repository"
+      "datasourceTemplate": "helm-repository",
+      "depNameTemplate": "{{id}}",
+      "currentValueTemplate": "0.0.0",
+      "registryUrlTemplate": "{{url}}"
     },
     {
       "customType": "regex",
