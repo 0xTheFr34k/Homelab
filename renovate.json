@@ -16,7 +16,10 @@
   ],
   "enabledManagers": ["flux", "regex"],
   "flux": {
-    "managerFilePatterns": ["/flux/.+\\.ya?ml$", "/apps/.+\\.ya?ml$"]
+    "managerFilePatterns": ["/\\.yaml(?:\\.j2)?$/"]
+  },
+  "kubernetes": {
+    "managerFilePatterns": ["/\\.yaml(?:\\.j2)?$/"]
   },
   "customManagers": [
     {
@@ -35,6 +38,10 @@
       "security",
       "renovate"
     ]
-  }
+  },
+  "ignorePaths": [
+    "**/*.sops.*",
+    "**/practice/**",
+  ],
 }
 
