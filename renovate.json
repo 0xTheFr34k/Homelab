@@ -14,18 +14,27 @@
     "dependencies",
     "renovate"
   ],
-  "enabledManagers": ["flux", "regex"],
+  "enabledManagers": [
+    "flux",
+    "custom.regex"
+  ],
   "flux": {
-    "managerFilePatterns": ["/\\.yaml(?:\\.j2)?$/"]
+    "managerFilePatterns": [
+      "/\\.yaml(?:\\.j2)?$/"
+    ]
   },
   "kubernetes": {
-    "managerFilePatterns": ["/\\.yaml(?:\\.j2)?$/"]
+    "managerFilePatterns": [
+      "/\\.yaml(?:\\.j2)?$/"
+    ]
   },
   "customManagers": [
     {
       "customType": "regex",
       "description": "Update container image tags in YAML",
-      "fileMatch": ["^kubernetes/apps/.+\\.ya?ml$"],
+      "managerFilePatterns": [
+        "/^kubernetes/apps/.+\\.ya?ml$/"
+      ],
       "matchStrings": [
         "image:\\s*(?<depName>.*?):(?<currentValue>[a-zA-Z0-9._-]+)"
       ],
@@ -43,6 +52,5 @@
     "**/*.sops.*",
     "**/practice/**",
     "**/gotk-sync.yaml"
-  ],
+  ]
 }
-
