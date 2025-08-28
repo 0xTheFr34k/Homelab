@@ -12,17 +12,30 @@
     "dependencies",
     "renovate"
   ],
- "customManagers": [
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Extract Helm repositories from Flux HelmRepository CRDs",
+      "fileMatch": [
+        "flux/repositories/helm/.*\\.ya?ml$"
+      ],
+      "matchStrings": [
+        "kind:\\s*HelmRepository[\\s\\S]*?metadata:\\s*\\n[\\s\\S]*?name:\\s*(?<id>[a-zA-Z0-9._-]+)[\\s\\S]*?url:\\s*(?<url>https?://[^\\s]+)"
+      ],
+      "datasourceTemplate": "helm-repository"
+    },
     {
       "customType": "regex",
       "description": "Update HelmRelease chart versions (FluxCD)",
       "fileMatch": [
-        ".*\\.ya?ml$"
+        "apps/.*/app/.*\\.ya?ml$"
       ],
       "matchStrings": [
-        "chart:\\s*\\n\\s*spec:\\s*\\n\\s*chart:\\s*(?<depName>.*?)\\s*\\n(?:.*\\n)*?version:\\s*(?<currentValue>.*)"
+        "chart:\\s*\\n\\s*spec:\\s*\\n\\s*chart:\\s*(?<depName>[a-zA-Z0-9._-]+)[\\s\\S]*?sourceRef:[\\s\\S]*?name:\\s*(?<registryUrl>[a-zA-Z0-9._-]+)[\\s\\S]*?version:\\s*(?<currentValue>[0-9a-zA-Z._-]+)"
       ],
-      "datasourceTemplate": "helm"
+      "datasourceTemplate": "helm",
+      "depNameTemplate": "{{depName}}",
+      "registryUrlTemplate": "{{registryUrl}}"
     },
     {
       "customType": "regex",
