@@ -13,33 +13,17 @@
     "renovate"
   ],
   "customManagers": [
-    {
-      "customType": "regex",
-      "description": "Extract Helm repositories from Flux HelmRepository CRDs",
-      "fileMatch": [
-        "flux/repositories/helm/.*\\.ya?ml$"
-      ],
-      "matchStrings": [
-        "kind:\\s*HelmRepository[\\s\\S]*?metadata:\\s*\\n[\\s\\S]*?name:\\s*(?<id>[a-zA-Z0-9._-]+)[\\s\\S]*?url:\\s*(?<url>https?://[^\\s]+)"
-      ],
-      "datasourceTemplate": "helm-repository",
-      "depNameTemplate": "{{id}}",
-      "currentValueTemplate": "0.0.0",
-      "registryUrlTemplate": "{{url}}"
-    },
-    {
-      "customType": "regex",
-      "description": "Update HelmRelease chart versions (FluxCD)",
-      "fileMatch": [
-        "apps/.*/app/.*\\.ya?ml$"
-      ],
-      "matchStrings": [
-        "chart:\\s*\\n\\s*spec:\\s*\\n\\s*chart:\\s*(?<depName>[a-zA-Z0-9._-]+)[\\s\\S]*?sourceRef:[\\s\\S]*?name:\\s*(?<registryUrl>[a-zA-Z0-9._-]+)[\\s\\S]*?version:\\s*(?<currentValue>[0-9a-zA-Z._-]+)"
-      ],
-      "datasourceTemplate": "helm",
-      "depNameTemplate": "{{depName}}",
-      "registryUrlTemplate": "{{registryUrl}}"
-    },
+{
+  "customType": "regex",
+  "description": "Update any HelmRelease chart with inline repo URL",
+  "fileMatch": [".*\\.ya?ml$"],
+"matchStrings": [
+  "chart:\\s*\\n\\s*spec:\\s*\\n\\s*chart:\\s*(?<depName>[a-zA-Z0-9._-]+)(?:(?!version).)*?#\\s*repo:\\s*(?<registryUrl>https?://[^\\s]+).*?version:\\s*(?<currentValue>[0-9a-zA-Z._-]+)"
+],
+  "datasourceTemplate": "helm",
+  "depNameTemplate": "{{depName}}",
+  "registryUrlTemplate": "{{registryUrl}}"
+},
     {
       "customType": "regex",
       "description": "Update container image tags in YAML",
