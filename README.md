@@ -38,5 +38,5 @@ This repository contains my homelab setup using **Infrastructure as Code (IaC)**
 💡 Built for learning, automation, GitOps, and experimentation.
 
 <p align="center">
-  <img src="docs/assets/diagram.png" alt="Homelab Diagram" width="80%"/>
+  <img src="docs/assets/diagram.png" alt="Homelab Diagram" width="100%"/>
 </p>
