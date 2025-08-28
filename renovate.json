@@ -1,6 +1,22 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
-  ]
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        "config:recommended",
+        ":enablePreCommit"
+    ],
+    "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
+    "prTitle": "update {{depName}} to {{newVersion}}",
+    "prBodyTemplate": "This PR updates {{depName}} from `{{currentVersion}}` to `{{newVersion}}`.\n\n{{{changelogs}}}\n\n{{{controls}}}",
+    "ignoreTests": true,
+    "labels": [
+        "dependencies",
+        "renovate"
+    ],
+    "vulnerabilityAlerts": {
+        "enabled": true,
+        "labels": [
+            "security",
+            "renovate"
+        ]
+    }
 }
