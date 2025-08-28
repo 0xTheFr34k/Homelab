@@ -14,30 +14,25 @@
     "dependencies",
     "renovate"
   ],
-  "customManagers": [
-{
-  "customType": "regex",
-  "description": "Update any HelmRelease chart with inline repo URL",
-  "fileMatch": [".*\\.ya?ml$"],
-"matchStrings": [
-  "chart:\\s*\\n\\s*spec:\\s*\\n\\s*chart:\\s*(?<depName>[a-zA-Z0-9._-]+)\\s*\\n\\s*#\\s*repo:\\s*(?<registryUrl>https?://[^\\s]+)\\s*\\n\\s*version:\\s*(?<currentValue>[0-9a-zA-Z._-]+)"
-],
-  "datasourceTemplate": "helm",
-  "depNameTemplate": "{{depName}}",
-  "registryUrlTemplate": "{{registryUrl}}"
-},
-    {
-      "customType": "regex",
-      "description": "Update container image tags in YAML",
-      "fileMatch": [
-        ".*\\.ya?ml$"
-      ],
-      "matchStrings": [
-        "image:\\s*(?<depName>.*?):(?<currentValue>[a-zA-Z0-9._-]+)"
-      ],
-      "datasourceTemplate": "docker"
+  "enabledManagers": ["flux", "regex", "docker"],
+  "managers": {
+    "flux": {
+      "managerFilePatterns": ["/flux/.+\\.ya?ml$", "/apps/.+\\.ya?ml$"]
+    },
+    "regex": {
+      "customManagers": [
+        {
+          "customType": "regex",
+          "description": "Update container image tags in YAML",
+          "fileMatch": [".*\\.ya?ml$"],
+          "matchStrings": [
+            "image:\\s*(?<depName>.*?):(?<currentValue>[a-zA-Z0-9._-]+)"
+          ],
+          "datasourceTemplate": "docker"
+        }
+      ]
     }
-  ],
+  },
   "vulnerabilityAlerts": {
     "enabled": true,
     "labels": [
