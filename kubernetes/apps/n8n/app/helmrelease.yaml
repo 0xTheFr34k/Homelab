@@ -1,0 +1,52 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: n8n
+  namespace: flux-system
+spec:
+  chart:
+    spec:
+      chart: n8n
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: n8n
+        namespace: flux-system
+      version: 1.15.2
+  interval: 1m0s
+  releaseName: n8n
+  targetNamespace: n8n
+  upgrade:
+    crds: CreateReplace
+    disableWait: true
+    cleanupOnFail: true
+    remediation:
+      strategy: rollback
+      retries: 3
+  values:
+    api:
+      enabled: true
+      path: api
+      swagger:
+        enabled: true
+    main:
+      forceToUseStatefulset: false
+      persistence:
+        enabled: true
+        mountPath: "/home/node/.n8n"
+        storageClass: "longhorn"
+        accessMode: ReadWriteOnce
+        size: 8Gi
+        annotations:
+          helm.sh/resource-policy: keep
+    ingress:
+      enabled: true
+      className: "traefik"
+      hosts:
+        - host: n8n.ytaya.site
+          paths:
+            - path: /
+              pathType: Prefix
+      tls: []
+

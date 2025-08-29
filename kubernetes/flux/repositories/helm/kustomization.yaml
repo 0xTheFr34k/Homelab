@@ -6,3 +6,4 @@ resources:
   - cnpg.yaml
   - pi-hole.yaml
   - harbor.yaml
+  - n8n.yaml
