@@ -25,16 +25,6 @@ variable "workers" {
       storage     = "local-lvm"
       macaddr     = "BC:24:11:FF:D9:DE"
     }
-    # worker1 = {
-    #   name        = "k8s-worker-1"
-    #   vmid        = 201
-    #   target_node = "proxmox"
-    #   cpu         = 6
-    #   memory      = 6000
-    #   disk        = "350G"
-    #   storage     = "local-lvm"
-    #   macaddr     = "BC:24:11:71:D7:CF"
-    # }
   }
 }
 
