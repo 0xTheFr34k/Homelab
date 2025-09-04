@@ -1,0 +1,5 @@
+resources:
+  # Pre Flux-Kustomizations
+  - ./namespace.yaml
+  # Post Flux-Kustomizations
+  - ./uptime-kuma/ks.yaml
