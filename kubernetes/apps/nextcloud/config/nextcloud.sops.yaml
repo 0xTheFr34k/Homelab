@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: nextcloud-secret
+    namespace: nextcloud
+type: Opaque
+stringData:
+    nextcloud-username: ENC[AES256_GCM,data:JAU4Wqw=,iv:/96eKfQ+7ynhH89XbuUXrXehFAESfSRJtXuRh7VopR4=,tag:KFZMSS3eCGJoc3KnQvOuUg==,type:str]
+    nextcloud-password: ENC[AES256_GCM,data:PA3Pu5Z8BMLe9R7RD0E=,iv:HstpQKLQp6Lypldp6n+dKS5zo46vKTooHmV1vSb4yIM=,tag:8ZtemJJOh0rgsO0NYRglXA==,type:str]
+    smtp-username: ENC[AES256_GCM,data:QlF1KlcTZ0EF0FbGFR2RuDRNiCzzBw==,iv:XYcwGInGA9+lWT8wp56fW/xUgmVSHTD8NAb61lST6lg=,tag:BWcOu5SpI7i62F0kH997eQ==,type:str]
+    smtp-password: ENC[AES256_GCM,data:6YQILXdJcZfHWNn4kmC5+4irrw==,iv:U4Lk2R8HZuLdv7ARomNhcTOeJclL8Kj0Hi11MQ7pkI0=,tag:+FFjiv7kQEr/Fy4qNdt0gg==,type:str]
+    smtp-host: ENC[AES256_GCM,data:IJ7aQCD4WZr+YHnPFCQ=,iv:mRzyOlqZvBbUOOK3x9QIl6UQXyKBeHjsppEaw6L3PDI=,tag:Zah0jlL+w6LHAqvhzvU3KA==,type:str]
+sops:
+    age:
+        - recipient: age1646qm78yl7jgjue8fkseywxn322sdg47jtrqqhvypcfsx6k3e96qj5564c
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBONHo0Z0MrSDAraWMrVktP
+            SmgrclpwanoycHprdUs5dzVBaVNLWGdZc2dRCkYrbkViUWtuZ2tWOVJvZVkxUUlz
+            bnZoc0lNN0xVNmRzUXU2dXpia3FSQnMKLS0tIG9oNTVwU1ZpbTFLTmlieEFFbi9C
+            aDNRM1hsaTZXR0xKbFVGZTVGeUJaRDgKLWEBg4ci0TTPDNovxN5DrnHJ6LcfFQnY
+            3Kd3TtvR6tVEC8nZutFsIdigsyuiI3PcT+OAQy7I9RP5HaBrKLGu1g==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2025-09-04T15:14:19Z"
+    mac: ENC[AES256_GCM,data:49PwHXQgydv54M7Qjg46HrWhIHFr+nl6kVXrypmL82E0Q5lPBG/Zw6mNDwLd/NDuBTESvcTxFAgFcCbqeYsnhda14wvTcbybA8xdTmM08XTko9xnn7IibCwmKMAeeqvbPTTWN9wAdKerqgsJq/PEDaT6zeNKRfSkV+DaLRBG5lg=,iv:9Kp4ubwsBYPobEqy7ZFkQA8qThwmaUOBcoW3Zh9I4oQ=,tag:tu0cNHSUc3D4t4hrfP2Xkg==,type:str]
+    encrypted_regex: ^(data|stringData|certs|secrets|cluster|token)$
+    mac_only_encrypted: true
+    version: 3.10.2
