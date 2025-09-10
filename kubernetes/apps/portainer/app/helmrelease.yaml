@@ -25,19 +25,21 @@ spec:
       strategy: rollback
       retries: 3
   values:
+    env:
+      - name: PORTAINER_CSRF_SECURE
+        value: "false"   # disable strict CSRF during setup
     ingress:
       enabled: true
       ingressClassName: traefik
-      annotations: {}
+      annotations:
+        traefik.ingress.kubernetes.io/router.entrypoints: websecure
+        traefik.ingress.kubernetes.io/router.tls: "true"
       hosts:
         - host: portainer.ytaya.site
           paths:
             - path: /
               pathType: Prefix
-      tls: []
-    persistence:
-      enabled: true
-      size: "11Gi"
-      storageClass: longhorn
-      # existingClaim: portainer-volume #
-
+      tls:
+        - secretName: portainer-tls
+          hosts:
+            - portainer.ytaya.site
