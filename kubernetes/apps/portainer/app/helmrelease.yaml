@@ -26,8 +26,8 @@ spec:
       retries: 3
   values:
     env:
-      - name: PORTAINER_CSRF_SECURE
-        value: "false"   # disable strict CSRF during setup
+      - name: TRUSTED_ORIGINS
+        value: portainer.ytaya.site
     ingress:
       enabled: true
       ingressClassName: traefik
