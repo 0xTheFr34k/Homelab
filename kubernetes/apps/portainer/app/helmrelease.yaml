@@ -37,7 +37,7 @@ spec:
       tls: []
     persistence:
       enabled: true
-      size: "10Gi"
+      size: "11Gi"
       storageClass: longhorn
       # existingClaim: portainer-volume #
 
