@@ -39,7 +39,3 @@ spec:
           paths:
             - path: /
               pathType: Prefix
-      tls:
-        - secretName: portainer-tls
-          hosts:
-            - portainer.ytaya.site
