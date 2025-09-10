@@ -31,11 +31,16 @@ spec:
     ingress:
       enabled: true
       ingressClassName: traefik
-      annotations:
-        traefik.ingress.kubernetes.io/router.entrypoints: websecure
-        traefik.ingress.kubernetes.io/router.tls: "true"
+      annotations: {}
       hosts:
         - host: portainer.ytaya.site
           paths:
             - path: /
               pathType: Prefix
+      tls: []
+    persistence:
+      enabled: true
+      size: "11Gi"
+      storageClass: longhorn
+      # existingClaim: portainer-volume #
+
