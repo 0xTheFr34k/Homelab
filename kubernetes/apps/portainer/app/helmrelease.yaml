@@ -30,7 +30,7 @@ spec:
       ingressClassName: traefik
       annotations: {}
       hosts:
-        - host: portainer.lab.local
+        - host: portainer.ytaya.site
           paths:
             - path: /
               pathType: Prefix
