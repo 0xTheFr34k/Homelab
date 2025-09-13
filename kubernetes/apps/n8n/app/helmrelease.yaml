@@ -48,5 +48,6 @@ spec:
           paths:
             - path: /
               pathType: Prefix
-      tls: []
-
+      tls: [] 
+    webhook:
+      url: "https://n8n.ytaya.site/webhook"
