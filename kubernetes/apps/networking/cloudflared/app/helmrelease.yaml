@@ -25,5 +25,7 @@ spec:
       - hostname: "*.ytaya.site"
         service: http://traefik.networking.svc.cluster.local
       - service: http_status:404
+    tunnelConfig:
+      name: k8s-homelab-tunnel
 
 
