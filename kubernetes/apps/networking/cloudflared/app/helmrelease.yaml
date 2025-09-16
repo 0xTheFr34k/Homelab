@@ -18,7 +18,12 @@ spec:
   values:
     tunnelSecrets:
       existingConfigJsonFileSecret:
-        name: cloudflared-config
-      existingPemFileSecret:
         name: tunnel-credentials
+      # existingPemFileSecret:
+      #   name: tunnel-credentials
+    ingress:
+      - hostname: "*.ytaya.site"
+        service: http://traefik.networking.svc.cluster.local
+      - service: http_status:404
+
 
