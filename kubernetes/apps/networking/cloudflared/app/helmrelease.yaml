@@ -16,6 +16,10 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
+    securityContext:
+      capabilities:
+        drop:
+          - ALL
     tunnelSecrets:
       existingConfigJsonFileSecret:
         name: tunnel-credentials
