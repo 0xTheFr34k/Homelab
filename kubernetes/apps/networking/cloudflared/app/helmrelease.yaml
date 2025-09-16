@@ -19,8 +19,8 @@ spec:
     tunnelSecrets:
       existingConfigJsonFileSecret:
         name: tunnel-credentials
-      # existingPemFileSecret:
-      #   name: tunnel-credentials
+      existingPemFileSecret:
+        name: cert-pem-file-secret
     ingress:
       - hostname: "*.ytaya.site"
         service: http://traefik.networking.svc.cluster.local
