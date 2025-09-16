@@ -9,3 +9,4 @@ resources:
   - n8n.yaml
   - uptime-kuma.yaml
   - nextcloud.yaml
+  - cloudflared.yaml
