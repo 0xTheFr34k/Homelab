@@ -16,11 +16,7 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
-    securityContext:
-      capabilities:
-        drop:
-          - ALL
-          - NET_RAW
+    securityContext: {}
     tunnelSecrets:
       existingConfigJsonFileSecret:
         name: tunnel-credentials
