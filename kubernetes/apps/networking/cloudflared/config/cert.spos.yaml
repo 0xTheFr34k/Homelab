@@ -1,0 +1,23 @@
+apiVersion: v1
+data:
+    cert.pem: ENC[AES256_GCM,data:fgtU1VYz/WmaFPKZ80MEQV1kjC01AWf6s7GM25XvskatOGSGubrmU3wPDeYVtfafEpnWgzzwVCIAe/nGrjmHNx4BrLKLiq5j2qdhmuU+swLReRICQ620+subxsftf544/Xr/5DTNB72yZesexDLY+5myuuzNQIEL6FiPAAGejVFEAH9V6ub2SX/QgAneRRYSleP4a/8PG3rKBPjeecbEF9pRz9Mez9ncWoqL9Jp7MIWeg1pWItS2fYrGKhfpDvFIY2K6rD4QcfAGyXC6Iv90biWex4ezjEOYlDLFumrvP7dSeeIBsceTTRgUdmbOppNXCRbWITAJ8nL+3Y5ami8rNB3kMCVW1FcVVWcMZKKG+Tfqa4trtaAJ8PqGRDY1bithZOwjz5QpT1kjWfLi1EXPiPSzpAuZnczxRMr3hTBlgCsaWrl3Q5M6T/WJHkuyWmUsRuylzMDAN0FX+duzp5FyKcPwjKY=,iv:XYBmzj00cpNw3yUDuNFOKo3tIBPZ9TQcjj+cSitb+nY=,tag:Wt2JcO3niwdS/zE4q2Dkkw==,type:str]
+kind: Secret
+metadata:
+    name: cert-pem-file-secret
+    namespace: cloudflared
+sops:
+    age:
+        - recipient: age1646qm78yl7jgjue8fkseywxn322sdg47jtrqqhvypcfsx6k3e96qj5564c
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBTVnlSdFBHR1RNNlF2QitR
+            Q28vTG51VGJxc25UT1U1eFJPYlU0VmNHZjIwCnJsb3ppWkltRXdxbzVZaDN0Q1d1
+            L3o0dnl2bVZORGp6anpscXBUcGxpazQKLS0tIGdPbWlnODB1OWVwQldsQVh4dFJr
+            bjlHVHYzd2FlSSs3eUljUmlHSEtKaFkKpcCEHXZzam/kCehuquoT/KY96UT5JL4i
+            qTApARdyGd+eZ/yyawpmw1kjmN3qtJJm6G4JgKHMEivLOyPxfQWkxw==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2025-09-16T23:00:37Z"
+    mac: ENC[AES256_GCM,data:45VS2OapkHh2zJmhTb9mkZp/SKcRBiXdAUd10dKhtqFuBTAZAyyLZS3Fi+ciRNV3g7zZoj5pfpCuRoTLsbkzfcJ/UQKl0L5t/g1zy3h2M3UcgTb0jMeDTlPcM50yNyvpArYVuIhOITcu6xa2bSulC/84p/nVoOMXjTH518/8Yjc=,iv:0OgXlkbmeoLFNoilrTF2cmat5+9sGFYukle24iPC8oA=,tag:imy3/a2VGEawlF6zQzOuRA==,type:str]
+    encrypted_regex: ^(data|stringData|certs|secrets|cluster|token)$
+    mac_only_encrypted: true
+    version: 3.10.2
