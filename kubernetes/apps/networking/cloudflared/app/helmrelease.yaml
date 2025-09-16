@@ -31,5 +31,7 @@ spec:
       - service: http_status:404
     tunnelConfig:
       name: k8s-homelab-tunnel
+    replica:
+      allNodes: false
 
 
