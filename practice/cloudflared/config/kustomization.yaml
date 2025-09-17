@@ -1,3 +1,0 @@
-resources:
-  - ./tunnel-credentials.sops.yaml
-  - ./config.sops.yaml

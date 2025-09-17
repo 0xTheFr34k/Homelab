@@ -1,4 +1,3 @@
 resources:
   - ./tunnel-credentials.sops.yaml
-  # - ./config.sops.yaml
-  - ./cert.spos.yaml
+  - ./config.sops.yaml

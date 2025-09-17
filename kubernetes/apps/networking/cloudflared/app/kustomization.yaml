@@ -1,3 +1,2 @@
 resources:
-  - namespace.yaml
-  - helmrelease.yaml
+  - cloudflare.yaml
