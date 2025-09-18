@@ -14,7 +14,7 @@ spec:
         name: harbor
         namespace: flux-system
       # repo: https://helm.goharbor.io
-      version: 1.17.2
+      version: 1.18.0
   interval: 1m0s
   releaseName: harbor
   targetNamespace: harbor
