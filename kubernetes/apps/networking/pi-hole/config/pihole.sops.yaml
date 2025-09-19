@@ -4,20 +4,20 @@ metadata:
     namespace: pihole
     name: pihole-password
 stringData:
-    password: ENC[AES256_GCM,data:01lDWKo=,iv:O39m7KipCzwMmfD0xhuOnDxZA5YppzZSqfSbbHOCCVk=,tag:EPwm0jbTxsiscfvu+tbhGA==,type:str]
+    password: ENC[AES256_GCM,data:ycKJ/Ow=,iv:tzDcYBpxM3dpO1Ixcu3M+FeKHC4r3PwNL2h0B2+/jbQ=,tag:Azf/Lt29tK1haJi9V1WIfg==,type:str]
 sops:
     age:
         - recipient: age1646qm78yl7jgjue8fkseywxn322sdg47jtrqqhvypcfsx6k3e96qj5564c
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB4KzZONEs5aEhZM1A0OHVF
-            eHpIU1h6N2NoMWVjeXJkK0Y3YXR3RkFkL0ZRCmJobXBLT1drSkwxSXVXSWJaaEN0
-            akF4SFk4Yys1LzVRb2ZHcm0ybVdUdUkKLS0tIHRlemVpaDUrVi83Zjc0c1pzK0NB
-            K1RtT2tUVk1kQ0lPS0plK081LzNWOFEK6XOJFXBlCztyE3uVx5DN2/ibIz29Ama4
-            zmZ85AYt630KWn9RFdpHI81yai2i5JyifTgH5t/UAITO7U/mVfV8hA==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBhZWdGUG5mVG1lYm1qejM1
+            ZXdXdWRFUWFpZW5LeVNsSERqNVZ6RUlzTG40CjRvQ3JrVVhqMFhWZXlTcndZS0dZ
+            SGhUZFE4WnQ5cmQrbXBLaEVIWHVZNzAKLS0tIExsR3o5cTBLQ3pzV3h4NWVjSGN2
+            M09GVFVUa2swT1Y4aVErek1Wc2g3L2sKItDtyNNib32NoDw7tDrpTWhd1urUZFEL
+            zaix8h7cBrBbWTAFwXMj+SDJUZytwp1DYN57Xusv/nsRrvgJI7ksvQ==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-08-24T18:44:53Z"
-    mac: ENC[AES256_GCM,data:dnlrfBVbKpeRMP8D4vOvnECYHcgkak5bb7FTIYUsvE8xkE/ax0+fuwowanb/wrQNPYuBpiksDXmKVo/Q/Dov8BQ3j2bDZTcuSNAC9Ts78w5qqlNoNPvcjiO1TvMcrPxcsBk5248xIOfmXjih8Klp2xVJ8Eml8FOIo0FMH/ygLj4=,iv:1AUNhfKTCgjLzrNwlnIX6jzYayFL+FIjvYbAICtop6k=,tag:/8d4Jp4vfWcy76IXnm+weQ==,type:str]
+    lastmodified: "2025-09-19T01:02:17Z"
+    mac: ENC[AES256_GCM,data:i0oHDcZv4Q3USdl0kSEyeP7qAI3fMgiz2f6TWpi6lKdzsTeLWHiiRWhpV2OBvVmO71gwfNUpZtT4oLJOK3kVsTZ2dk6R9fUruGLLU2fC1KCT0lOVrw1zdeU246IGwQDRM7yuQOQU+KSt0F6Y0i47+HARiisl1hHHDsu28o3dQn8=,iv:pVzPqrwmx0WWwBTnbTyVVgyW62AhbOfVS0+pdN/L1Lo=,tag:iGhcaM2JYGYcJnWFLTQwVA==,type:str]
     encrypted_regex: ^(data|stringData|certs|secrets|cluster|token)$
     mac_only_encrypted: true
     version: 3.10.2
@@ -29,20 +29,20 @@ metadata:
     name: pihole-password-dns
 type: Opaque
 stringData:
-    EXTERNAL_DNS_PIHOLE_PASSWORD: ENC[AES256_GCM,data:pzy5McU=,iv:Z8USvKcxIiVz7NZ/tOdBSMb+Ga01sG97qcZ4lFMSISA=,tag:yvUruw1CLvMknzEMfKKm4w==,type:str]
+    pihole_password: ENC[AES256_GCM,data:1eHUdek=,iv:V/XbLQSIoFnsVyB4oj8E/h5ANuWo261EFBzcyE2FPCc=,tag:Ahaj7cyZVd9tMiXAuBPNOg==,type:str]
 sops:
     age:
         - recipient: age1646qm78yl7jgjue8fkseywxn322sdg47jtrqqhvypcfsx6k3e96qj5564c
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB4KzZONEs5aEhZM1A0OHVF
-            eHpIU1h6N2NoMWVjeXJkK0Y3YXR3RkFkL0ZRCmJobXBLT1drSkwxSXVXSWJaaEN0
-            akF4SFk4Yys1LzVRb2ZHcm0ybVdUdUkKLS0tIHRlemVpaDUrVi83Zjc0c1pzK0NB
-            K1RtT2tUVk1kQ0lPS0plK081LzNWOFEK6XOJFXBlCztyE3uVx5DN2/ibIz29Ama4
-            zmZ85AYt630KWn9RFdpHI81yai2i5JyifTgH5t/UAITO7U/mVfV8hA==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBhZWdGUG5mVG1lYm1qejM1
+            ZXdXdWRFUWFpZW5LeVNsSERqNVZ6RUlzTG40CjRvQ3JrVVhqMFhWZXlTcndZS0dZ
+            SGhUZFE4WnQ5cmQrbXBLaEVIWHVZNzAKLS0tIExsR3o5cTBLQ3pzV3h4NWVjSGN2
+            M09GVFVUa2swT1Y4aVErek1Wc2g3L2sKItDtyNNib32NoDw7tDrpTWhd1urUZFEL
+            zaix8h7cBrBbWTAFwXMj+SDJUZytwp1DYN57Xusv/nsRrvgJI7ksvQ==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-08-24T18:44:53Z"
-    mac: ENC[AES256_GCM,data:dnlrfBVbKpeRMP8D4vOvnECYHcgkak5bb7FTIYUsvE8xkE/ax0+fuwowanb/wrQNPYuBpiksDXmKVo/Q/Dov8BQ3j2bDZTcuSNAC9Ts78w5qqlNoNPvcjiO1TvMcrPxcsBk5248xIOfmXjih8Klp2xVJ8Eml8FOIo0FMH/ygLj4=,iv:1AUNhfKTCgjLzrNwlnIX6jzYayFL+FIjvYbAICtop6k=,tag:/8d4Jp4vfWcy76IXnm+weQ==,type:str]
+    lastmodified: "2025-09-19T01:02:17Z"
+    mac: ENC[AES256_GCM,data:i0oHDcZv4Q3USdl0kSEyeP7qAI3fMgiz2f6TWpi6lKdzsTeLWHiiRWhpV2OBvVmO71gwfNUpZtT4oLJOK3kVsTZ2dk6R9fUruGLLU2fC1KCT0lOVrw1zdeU246IGwQDRM7yuQOQU+KSt0F6Y0i47+HARiisl1hHHDsu28o3dQn8=,iv:pVzPqrwmx0WWwBTnbTyVVgyW62AhbOfVS0+pdN/L1Lo=,tag:iGhcaM2JYGYcJnWFLTQwVA==,type:str]
     encrypted_regex: ^(data|stringData|certs|secrets|cluster|token)$
     mac_only_encrypted: true
     version: 3.10.2
