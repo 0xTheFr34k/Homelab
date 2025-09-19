@@ -13,7 +13,7 @@ spec:
         kind: HelmRepository
         name: kube-prometheus-stack
         namespace: flux-system
-      version: 77.9.1
+      version: 77.10.0
   interval: 1m0s
   releaseName: kube-prometheus-stack
   targetNamespace: monitoring
