@@ -11,3 +11,4 @@ resources:
   - nextcloud.yaml
   - cloudflared.yaml
   - kube-prometheus-stack.yaml
+  - external-dns.yaml
