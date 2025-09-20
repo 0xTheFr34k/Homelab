@@ -15,5 +15,6 @@
     kubernetes-helm
     kubectx
     kubectl
+    istioctl
   ];
 }
