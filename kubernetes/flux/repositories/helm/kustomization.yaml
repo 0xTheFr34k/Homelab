@@ -12,3 +12,4 @@ resources:
   - cloudflared.yaml
   - kube-prometheus-stack.yaml
   - external-dns.yaml
+  - istiod.yaml
