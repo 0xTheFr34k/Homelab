@@ -8,10 +8,12 @@
     age
     fluxcd
     talosctl
+    talhelper
     ansible
     stern
     terraform
     kubernetes-helm
     kubectx
+    kubectl
   ];
 }
