@@ -1,0 +1,31 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: cloudflared
+  namespace: cloudflared
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: cloudflared
+      version: 2.2.0
+      sourceRef:
+        kind: HelmRepository
+        name: cloudflared
+        namespace: flux-system
+      interval: 5m
+  values:
+    tunnelSecrets:
+      existingConfigJsonFileSecret:
+        name: tunnel-credentials
+      existingPemFileSecret:
+        name: cert-pem-file-secret
+    ingress:
+      - hostname: "*.ytaya.site"
+        service: http://traefik.networking.svc.cluster.local
+      - service: http_status:404
+    tunnelConfig:
+      name: k8s-homelab-tunnel
+    replica:
+      allNodes: false
