@@ -9,7 +9,7 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  path: ./kubernetes/apps/istio/app/istio
+  path: ./kubernetes/apps/istio/app/base
   prune: true
   sourceRef:
     kind: GitRepository
@@ -49,7 +49,7 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  path: ./kubernetes/apps/istio/app/istio-getway
+  path: ./kubernetes/apps/istio/app/getway
   prune: true
   sourceRef:
     kind: GitRepository
