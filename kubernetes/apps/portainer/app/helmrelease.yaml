@@ -13,7 +13,7 @@ spec:
         kind: HelmRepository
         name: portainer
         namespace: flux-system
-      version: 2.39.0
+      version: 239.1.0
   interval: 1m0s
   releaseName: portainer
   targetNamespace: portainer
