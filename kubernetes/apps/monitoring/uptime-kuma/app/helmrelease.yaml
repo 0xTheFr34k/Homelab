@@ -13,7 +13,7 @@ spec:
         kind: HelmRepository
         name: uptime-kuma
         namespace: flux-system
-      version: 2.22.0
+      version: 4.0.0
   interval: 1m0s
   releaseName: uptime-kuma
   targetNamespace: monitoring
