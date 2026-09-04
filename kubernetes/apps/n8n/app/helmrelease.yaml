@@ -13,7 +13,7 @@ spec:
         kind: HelmRepository
         name: n8n
         namespace: flux-system
-      version: 1.16.32
+      version: 1.24.37
   interval: 1m0s
   releaseName: n8n
   targetNamespace: n8n
